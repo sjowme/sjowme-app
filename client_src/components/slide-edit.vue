@@ -376,7 +376,7 @@
                 });
                 //title gets prio
                 if (this.slide.config.title.active) {
-                    positions[this.slide.config.title.position] = {name: 'title', label: 'Titel'};
+                    //positions[this.slide.config.title.position] = {name: 'title', label: 'Titel'};
                 }
                 return positions;
             },

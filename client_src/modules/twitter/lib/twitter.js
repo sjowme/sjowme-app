@@ -6,7 +6,7 @@ var client = new Twitter(config.twitter);
 
 
 module.exports = {
-    getTweets(search_term, count) {
+    getTweetsTest(search_term, count) {
 		
 		client.stream('statuses/filter', {track: 'internet'},  function(stream) {
 			stream.on('connected', function (res) {

@@ -27,6 +27,8 @@
             this.input = $(this.$els.color);
             this.input.spectrum({
                 allowEmpty: this.allowEmpty,
+				chooseText: "kiezen",
+				cancelText: "cancel",
                 color: this.value,
                 flat: false,
                 preferredFormat: 'hex',

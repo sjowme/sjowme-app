@@ -85,7 +85,7 @@ module.exports = {
                     weather: {}
                 });
             }
-            forecast.getWeather(config.forecast.units, config.location.lat, config.location.lng, (params.ignore_cache || false),
+            forecast.getWeather(config.forecast.units, config.location.lat, config.location.lng, (params.ignore_cache || true),
                 (err, weather) => {
                     if (err) {
                         //todo retry/return cache

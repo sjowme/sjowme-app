@@ -67,7 +67,7 @@
 
         methods: {
             getWeather() {
-                this.$parent.moduleCommand('weather', 'getWeather', {ignore_cache: false});
+                this.$parent.moduleCommand('weather', 'getWeather', {ignore_cache: true});
             },
             roundTemp(temp, round) {
                 if (!temp) {

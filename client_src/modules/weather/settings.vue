@@ -105,7 +105,7 @@
                 this.config.location.lng = place.geometry.location.lng();
             },
             getWeather() {
-                this.$parent.moduleCommand('weather', 'getWeather', {ignore_cache: false});
+                this.$parent.moduleCommand('weather', 'getWeather', {ignore_cache: true});
             }
         }
 

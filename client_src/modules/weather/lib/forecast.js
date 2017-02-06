@@ -24,7 +24,7 @@ module.exports = {
 
     getWeather(units, lat, lng, ignore_cache, cb) {
         // Retrieve weather information from coordinates
-        getForecaster(units).get([lat, lng], ignore_cache || false, (err, weather) => {
+        getForecaster(units).get([lat, lng], ignore_cache || true, (err, weather) => {
             if(err) {
                 return cb(err);
             }

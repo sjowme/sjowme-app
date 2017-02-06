@@ -78,7 +78,7 @@ module.exports = {
         'Lichtgrijs': 'uk-panel-box', /*trans*/
         'Grijs': 'uk-panel-box uk-panel-box-primary', /*trans*/
         'Zwart': 'uk-panel-box uk-panel-box-secondary', /*trans*/
-        'Lichtgrijs met kader': 'uk-panel-border' /*trans*/
+        'Paneel met kader': 'uk-panel-border' /*trans*/
     }
 
 };

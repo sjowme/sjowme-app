@@ -18,6 +18,15 @@
             };
         },
 
+        ready() {
+            this.interval = setInterval(this.getTweets, (15 * 60 * 1000));
+			this.getTweets();
+        },
+
+        destroyed() {
+            clearInterval(this.interval);
+        },
+
         created() {
             this.getTweets();
         },
@@ -26,6 +35,10 @@
             'module.response.twitter.getTweets': function (res) {
                 this.tweets = res.tweets;
             }
+        },
+
+        watch: {
+            this.getTweets();
         },
 
         methods: {

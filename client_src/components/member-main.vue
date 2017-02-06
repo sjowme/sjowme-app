@@ -10,7 +10,7 @@
                             </div>
                             <div class="uk-width-3-4">
                                 <div class="uk-margin-top uk-flex uk-flex-middle uk-flex-space-between">
-                                    <h2 class="uk-margin-remove">{{ 'Mijn Sjowsssss' | trans }}</h2>
+                                    <h2 class="uk-margin-remove">{{ 'Mijn Sjows' | trans }}</h2>
                                     <info-icon url="//www.sjow.me/dashboard-mijn-sjows/"
                                             :title="$trans('Meer informatie over Mijn Sjows')"></info-icon>
                                 </div>

@@ -91,7 +91,7 @@ module.exports = {
                         //todo retry/return cache
                         return cb(err);
                     }
-                    cb(null, {error: false, weather});
+                    cb(null, {error: false, weather, params});
                 });
         }
     }

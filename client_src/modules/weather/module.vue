@@ -19,7 +19,8 @@
         data() {
             return {
                 interval: 0,
-                weather: false
+                weather: false,
+				id: _.uniqueId()
             };
         },
 
@@ -67,7 +68,7 @@
 
         methods: {
             getWeather() {
-                this.$parent.moduleCommand('weather', 'getWeather', {ignore_cache: false});
+                this.$parent.moduleCommand('weather', 'getWeather', {ignore_cache: false, id: this.id});
             },
             roundTemp(temp, round) {
                 if (!temp) {

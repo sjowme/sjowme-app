@@ -5,7 +5,7 @@ var Twitter = require('twitter');
 var client = new Twitter(config.twitter);
 
 module.exports = {
-    search(search_term, count) {
+    getTweets(search_term, count) {
         return new Promise((resolve, reject) => {
             client.get('search/tweets', {
                 q: search_term,

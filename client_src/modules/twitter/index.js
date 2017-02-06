@@ -59,7 +59,7 @@ module.exports = {
             if (!params.search_term) {
                 return cb(null,  []);
             }
-            twitter.search(params.search_term, params.count)
+            twitter.getTweets(params.search_term, params.count)
                 .then(tweets => cb(null, {tweets}))
                 .catch(err => cb(err));
         }

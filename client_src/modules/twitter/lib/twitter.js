@@ -17,6 +17,10 @@ module.exports = {
 				console.log('stream reconnecting in ' + interval + ' (' + res.statusCode + ')');
 			});
 			
+			stream.on('tweet', function (res) {
+				console.log('Got a tweet! (' + res + ')');
+			});
+			
 			stream.on('data', function(tweet) {
 				console.log(tweet.text);
 			});
@@ -35,6 +39,7 @@ module.exports = {
                 if (err) {
                     return reject(err);
                 }
+				console.log('Got the tweets: '+res+' ');
                 resolve(res.statuses);
             });
 			

@@ -260,7 +260,7 @@
                                             <li v-for="mod in modules"
                                                 :class="{'uk-active': current_module.name == mod.name}">
                                                 <a @click="setModule(mod)">{{mod.label}}</a>
-												<div :class="{'uk-active': mod.name == 'twitter'}">
+												<div :class="{'uk-active': mod.name == 'twitter' || mod.name == 'weather' || mod.name == 'rss'}">
 													<info-icon
 														:title="$trans('U kunt maar 1x deze module gebruiken per sjow.')"></info-icon>
 												</div>

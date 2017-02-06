@@ -260,7 +260,8 @@
                                             <li v-for="mod in modules"
                                                 :class="{'uk-active': current_module.name == mod.name}">
                                                 <a @click="setModule(mod)">{{mod.label}}</a>
-												<info-icon
+												<info-icon url="#"
+													:class="nav-info-icon {'enable': mod.name == twitter || mod.name == weather}"
 													:title="$trans('U kunt maar 1x deze module gebruiken per sjow.')"></info-icon>
                                             </li>
                                         </ul>

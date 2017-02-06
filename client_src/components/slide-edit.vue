@@ -385,7 +385,7 @@
                 return positions;
             },
             current_module_data() {
-                return _.find(this.modules, {name: this.current_module.name});
+                return _.find(this.modules, {name: this.current_module.name, name: this.current_module.label});
             }
         },
 
@@ -479,7 +479,13 @@
             positionError(pos, module_name) {
                 var message = '';
                 if (this.current_positions[pos] && this.current_positions[pos].name !== module_name) {
-                    message = this.$trans('Positie is al in gebruik door module %label%.', {label: this.current_positions[pos].label})
+					if(typeof this.current_positions[pos].label !== "undefined")
+					{
+						message = this.$trans('Positie is al in gebruik door module %label%.', {label: this.current_positions[pos].label})
+					}
+					else {
+						message = this.$trans('Positie is al in gebruik door module %name%.', {label: this.current_positions[pos].name})
+					}
                 }
                 if (pos == this.slide.config.title.position && this.slide.config.title.active && module_name !== 'title') {
                     message = this.$trans('Positie is al in gebruik door de titel.');

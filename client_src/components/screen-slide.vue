@@ -4,7 +4,7 @@
         <partial :name="'media-' + slide.background.type"></partial>
         <div class="uk-overlay-panel uk-flex uk-flex-center uk-flex-middle" :class="overlayPanelClasses" :style="overlayPanelStyle">
 
-            <div v-if="slide.config.title" class="sj-module sj-module-title" :class="titleModuleClasses">
+            <div v-if="slide.config.title.active" class="sj-module sj-module-title" :class="titleModuleClasses">
                 <h1 :class="titleClasses">{{ slide.title }}</h1>
             </div>
 

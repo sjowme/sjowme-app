@@ -16,7 +16,8 @@ module.exports = {
     modules: [
         require('../../client_src/modules/logo'),
         require('../../client_src/modules/list'),
-        require('../../client_src/modules/weather')
+        require('../../client_src/modules/weather'),
+        require('../../client_src/modules/twitter')
     ]
 
 };

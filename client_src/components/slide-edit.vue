@@ -14,7 +14,7 @@
                             </div>
 
                             <ul class="uk-thumbnav">
-                                <li v-for="sl in channel.content.slides" class="uk-width-1-3"
+                                <li v-for="sl in channel.content.slides" class="uk-width-1-5"
                                     :class="{'uk-active': sl.number == slide.number}">
                                     <a @click="editSlide(sl)" class="uk-position-relative">
                                         <img :src="previewImageSrc(channel, sl)" :alt="sl.background.name" width="240" height="135"/>
@@ -395,11 +395,11 @@
                 });
             },
             editPrev() {
-                var slide = _.find(this.channel.content.slides, {number: (this.slide.number == 1 ? 6 : (this.slide.number - 1))});
+                var slide = _.find(this.channel.content.slides, {number: (this.slide.number == 1 ? 10 : (this.slide.number - 1))});
                 this.editSlide(slide);
             },
             editNext() {
-                var slide = _.find(this.channel.content.slides, {number: (this.slide.number == 6 ? 1 : (this.slide.number + 1))});
+                var slide = _.find(this.channel.content.slides, {number: (this.slide.number == 10 ? 1 : (this.slide.number + 1))});
                 this.editSlide(slide);
             },
             editSlide(slide) {

@@ -6,13 +6,21 @@ var client = new Twitter(config.twitter);
 
 
 client.stream('statuses/filter', {track: 'internet'},  function(stream) {
-  stream.on('data', function(tweet) {
-    console.log(tweet.text);
-  });
+	stream.on('connected', function (res) {
+		console.log('stream connected (' + res.statusCode + ')');
+	});
+	
+	stream.on('reconnect', function (req, res, interval) {
+		console.log('stream reconnecting in ' + interval + ' (' + res.statusCode + ')');
+	});
+	
+	stream.on('data', function(tweet) {
+		console.log(tweet.text);
+	});
 
-  stream.on('error', function(error) {
-    console.log(error);
-  });
+	stream.on('error', function(error) {
+		console.log(error);
+	});
 });
 
 module.exports = {

@@ -22,9 +22,9 @@ function getForecaster(units) {
 
 module.exports = {
 
-    getWeather(units, lat, lng, ignore_cache, cb) {
+    getWeather(units, lat, lng, ignore_cache, id, cb) {
         // Retrieve weather information from coordinates
-        getForecaster(units).get([lat, lng], ignore_cache || false, (err, weather) => {
+        getForecaster(units).get([lat, lng], ignore_cache || false, id, (err, weather) => {
             if(err) {
                 return cb(err);
             }

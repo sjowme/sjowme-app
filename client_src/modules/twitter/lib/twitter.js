@@ -19,4 +19,14 @@ module.exports = {
             });
         });
     }
+	
+	client.stream('search/tweets', {q: search_term,result_type: "recent",count: count},  function(stream) {
+		stream.on('data', function(tweet) {
+			console.log(tweet.text);
+		});
+
+		stream.on('error', function(error) {
+			console.log(error);
+		});
+	});
 };

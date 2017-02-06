@@ -42,6 +42,12 @@
     module.exports = {
 
         mixins: [moduleMixin],
+		
+		methods: {
+            getFeeds() {
+                this.$parent.moduleCommand('rss', 'getFeeds', {count: this.config.count, max_length: this.config.max_length});
+            }
+        }
 
     }
 

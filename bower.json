@@ -1,0 +1,26 @@
+{
+  "name": "sjowme",
+  "authors": [
+    "Kasper Mooijman",
+    "Matthijs Alles <matthijs@bixie.nl>"
+  ],
+  "description": "Sjowme Screen app",
+  "main": "app.js",
+  "license": "MIT",
+  "homepage": "www.sjow.me",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "_public/assets",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "uikit": "^2.27.1",
+    "lodash": "^4.15.0",
+    "google-maps": "^3.2.1",
+    "weather-icons": "^2.0.10",
+    "vimeo-player-js": "^1.0.6",
+    "spectrum": "^1.8.0"
+  }
+}

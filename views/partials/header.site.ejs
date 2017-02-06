@@ -1,0 +1,18 @@
+<header>
+    <nav class="uk-navbar">
+
+        <a href="/" class="uk-navbar-brand">
+            <img src="/assets/images/sjowmelogo_web_100.png" class="uk-responsive-height" alt="Sjowme!"/>
+        </a>
+
+        <ul class="uk-navbar-nav">
+            <li <% if (page == 'Home') {%> class="uk-active"<%}%>><a href="/">Home</a></li>
+        </ul>
+
+        <div class="uk-navbar-flip">
+            <ul class="uk-navbar-nav uk-margin-small-right">
+                <li><a href="<%=member_home%>">Mijn sjow.me</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>

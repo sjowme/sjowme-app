@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Sjow.me</title>
+    <link rel="stylesheet" href="/assets/css/member.css">
+    <link rel="icon" href="/assets/images/favicon.ico"/>
+</head>
+<body>
+<div class="uk-block uk-block-default">
+    <div class="uk-container uk-container-center">
+        <header>
+            <nav class="uk-navbar">
+                <a href="/" class="uk-navbar-brand">
+                    <img src="/assets/images/sjowmelogo" class="uk-responsive-height" alt="Sjowme!"/>
+                </a>
+            </nav>
+        </header>
+    </div>
+</div>
+<div class="uk-block uk-block-default">
+    <div class="uk-container uk-container-center">
+        <main style="min-height: 60vh;">
+            <%- body %>
+        </main>
+    </div>
+</div>
+<div class="uk-block uk-block-secondary">
+    <div class="uk-container uk-container-center">
+        <footer>
+            <div class="uk-text-center uk-contrast">
+                <h4 class="uk-text-muted">&copy; sjow<span class="uk-text-primary">.</span>me <%= (new Date()).getFullYear() %></h4>
+                <em class="uk-text-muted">Website door <a href="http://www.bixie.nl"><i class="uk-icon-bixie uk-margin-small-right"></i>Bixie</a></em>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<script src="/assets/jquery/dist/jquery.min.js"></script>
+<script src="/assets/uikit/js/uikit.min.js"></script>
+
+</body>
+</html>
+

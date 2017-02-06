@@ -1,0 +1,34 @@
+<header>
+    <% if (data.member_id) { %>
+    <nav class="uk-navbar">
+
+        <a href="<%= home_url %>" class="uk-navbar-brand">
+            <img src="/assets/images/sjowmelogo_web_100.png" class="uk-responsive-height" alt="Sjowme!"/>
+        </a>
+
+        <ul class="uk-navbar-nav">
+            <li <% if (page == 'Dashboard') {%> class="uk-active"<%}%>><a href="/">Dashboard</a></li>
+            <li <% if (page == 'Gebruikers') {%> class="uk-active"<%}%>><a href="/gebruikers">Gebruikers</a></li>
+            <li <% if (page == 'Media') {%> class="uk-active"<%}%>><a href="/mediabeheer">Media</a></li>
+        </ul>
+
+        <div class="uk-navbar-flip">
+            <ul class="uk-navbar-nav uk-margin-small-right">
+                <li><a href="/logout">Uitloggen</a></li>
+                <li><a href="<%= member_url %>">Members</a></li>
+            </ul>
+            <div class="uk-navbar-content uk-flex uk-flex-middle">
+                <p class="uk-margin-remove"><%= data.user.name %></p>
+                <img class="uk-border-circle uk-margin-small-left" style="height: 30px" src="<%= data.user.image_url %>" alt="">
+            </div>
+        </div>
+    </nav>
+    <% } else { %>
+    <div class="uk-text-center">
+        <a href="http://sjow.me" class="">
+            <img src="/assets/images/sjowmelogo_web_300.png" class="uk-responsive-height" alt="Sjowme!"/>
+        </a>
+    </div>
+
+    <% } %>
+</header>

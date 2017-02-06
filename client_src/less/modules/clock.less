@@ -1,0 +1,301 @@
+/* Source: http://tutorialzine.com/2013/06/digital-clock/ */
+
+@clock-digital-padding: 20px;
+@clock-digital-digit-margin: 4px;
+@clock-digital-digit-width: 28px;
+@clock-digital-digit-height: 50px;
+@clock-digital-digit-stroke: 5px;
+@clock-digital-digit-color-light: @global-color;
+@clock-digital-digit-background-light: @global-background;
+@clock-digital-digit-color-dark: @global-contrast-color;
+@clock-digital-digit-background-dark: @global-secondary-background;
+
+.sj-module-clock.sj-pos-tr .uk-panel, .sj-module-clock.sj-pos-br .uk-panel {
+  text-align: right;
+}
+.sj-clock {
+  position: relative;
+}
+
+.sj-clock .display {
+  text-align: center;
+  padding:  (2 * @clock-digital-padding) @clock-digital-padding @clock-digital-padding;
+  border-radius: 6px;
+  position: relative;
+  height: (@clock-digital-digit-height + @clock-digital-digit-margin);
+}
+
+
+/*-------------------------
+	Light color theme
+--------------------------*/
+
+.sj-clock.light{
+  color: @clock-digital-digit-color-light;
+}
+
+.sj-clock.light .digits div span{
+  background-color: @clock-digital-digit-color-light;
+  border-color: @clock-digital-digit-color-light;
+}
+
+.sj-clock.light .digits div.dots:before,
+.sj-clock.light .digits div.dots:after{
+  background-color: @clock-digital-digit-color-light;
+}
+
+.sj-clock.light .display{
+  background-color: @clock-digital-digit-background-light;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.08) inset, 0 1px 1px @clock-digital-digit-background-light;
+}
+
+
+/*-------------------------
+	Dark color theme
+--------------------------*/
+
+
+.sj-clock.dark{
+  color: @clock-digital-digit-color-dark;
+}
+
+.sj-clock.dark:after{
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.sj-clock.dark .digits div span{
+  background-color: @clock-digital-digit-color-dark;
+  border-color: @clock-digital-digit-color-dark;
+}
+
+.sj-clock.dark .display{
+  background-color: @clock-digital-digit-background-dark;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.08) inset, 0 1px 1px @clock-digital-digit-background-dark;
+}
+
+.sj-clock.dark .digits div.dots:before,
+.sj-clock.dark .digits div.dots:after{
+  background-color: @clock-digital-digit-color-dark;
+}
+
+
+/*-------------------------
+	The Digits
+--------------------------*/
+
+
+.sj-clock .digits div{
+  text-align: left;
+  position: relative;
+  width:  @clock-digital-digit-width;
+  height: @clock-digital-digit-height;
+  display: inline-block;
+  margin: 0 @clock-digital-digit-margin;
+}
+
+.sj-clock .digits div span{
+  opacity: 0;
+  position: absolute;
+
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.sj-clock .digits div span:before,
+.sj-clock .digits div span:after{
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: @clock-digital-digit-stroke solid transparent;
+}
+
+.sj-clock .digits .d1{			height:  @clock-digital-digit-stroke;width: 16px;top: 0;left: 6px;}
+.sj-clock .digits .d1:before{	border-width: 0 @clock-digital-digit-stroke @clock-digital-digit-stroke 0;border-right-color: inherit;left: -@clock-digital-digit-stroke;}
+.sj-clock .digits .d1:after{	border-width: 0 0 @clock-digital-digit-stroke @clock-digital-digit-stroke;border-left-color: inherit;right: -@clock-digital-digit-stroke;}
+
+.sj-clock .digits .d2{			height: @clock-digital-digit-stroke;width: 16px;top: 24px;left: 6px;}
+.sj-clock .digits .d2:before{	border-width: 3px 4px 2px;border-right-color: inherit;left: -8px;}
+.sj-clock .digits .d2:after{	border-width: 3px 4px 2px;border-left-color: inherit;right: -8px;}
+
+.sj-clock .digits .d3{			height: @clock-digital-digit-stroke;width: 16px;top: 48px;left: 6px;}
+.sj-clock .digits .d3:before{	border-width: @clock-digital-digit-stroke @clock-digital-digit-stroke 0 0;border-right-color: inherit;left: -@clock-digital-digit-stroke;}
+.sj-clock .digits .d3:after{	border-width: @clock-digital-digit-stroke 0 0 @clock-digital-digit-stroke;border-left-color: inherit;right: -@clock-digital-digit-stroke;}
+
+.sj-clock .digits .d4{			width: @clock-digital-digit-stroke;height: 14px;top: 7px;left: 0;}
+.sj-clock .digits .d4:before{	border-width: 0 @clock-digital-digit-stroke @clock-digital-digit-stroke 0;border-bottom-color: inherit;top: -@clock-digital-digit-stroke;}
+.sj-clock .digits .d4:after{	border-width: 0 0 @clock-digital-digit-stroke @clock-digital-digit-stroke;border-left-color: inherit;bottom: -@clock-digital-digit-stroke;}
+
+.sj-clock .digits .d5{			width: @clock-digital-digit-stroke;height: 14px;top: 7px;right: 0;}
+.sj-clock .digits .d5:before{	border-width: 0 0 @clock-digital-digit-stroke @clock-digital-digit-stroke;border-bottom-color: inherit;top: -@clock-digital-digit-stroke;}
+.sj-clock .digits .d5:after{	border-width: @clock-digital-digit-stroke 0 0 @clock-digital-digit-stroke;border-top-color: inherit;bottom: -@clock-digital-digit-stroke;}
+
+.sj-clock .digits .d6{			width: @clock-digital-digit-stroke;height: 14px;top: 32px;left: 0;}
+.sj-clock .digits .d6:before{	border-width: 0 @clock-digital-digit-stroke @clock-digital-digit-stroke 0;border-bottom-color: inherit;top: -@clock-digital-digit-stroke;}
+.sj-clock .digits .d6:after{	border-width: 0 0 @clock-digital-digit-stroke @clock-digital-digit-stroke;border-left-color: inherit;bottom: -@clock-digital-digit-stroke;}
+
+.sj-clock .digits .d7{			width: @clock-digital-digit-stroke;height: 14px;top: 32px;right: 0;}
+.sj-clock .digits .d7:before{	border-width: 0 0 @clock-digital-digit-stroke @clock-digital-digit-stroke;border-bottom-color: inherit;top: -@clock-digital-digit-stroke;}
+.sj-clock .digits .d7:after{	border-width: @clock-digital-digit-stroke 0 0 @clock-digital-digit-stroke;border-top-color: inherit;bottom: -@clock-digital-digit-stroke;}
+
+
+/* 1 */
+
+.sj-clock .digits div.one .d5,
+.sj-clock .digits div.one .d7{
+  opacity: 1;
+}
+
+/* 2 */
+
+.sj-clock .digits div.two .d1,
+.sj-clock .digits div.two .d5,
+.sj-clock .digits div.two .d2,
+.sj-clock .digits div.two .d6,
+.sj-clock .digits div.two .d3{
+  opacity: 1;
+}
+
+/* 3 */
+
+.sj-clock .digits div.three .d1,
+.sj-clock .digits div.three .d5,
+.sj-clock .digits div.three .d2,
+.sj-clock .digits div.three .d7,
+.sj-clock .digits div.three .d3{
+  opacity: 1;
+}
+
+/* 4 */
+
+.sj-clock .digits div.four .d5,
+.sj-clock .digits div.four .d2,
+.sj-clock .digits div.four .d4,
+.sj-clock .digits div.four .d7{
+  opacity: 1;
+}
+
+/* 5 */
+
+.sj-clock .digits div.five .d1,
+.sj-clock .digits div.five .d2,
+.sj-clock .digits div.five .d4,
+.sj-clock .digits div.five .d3,
+.sj-clock .digits div.five .d7{
+  opacity: 1;
+}
+
+/* 6 */
+
+.sj-clock .digits div.six .d1,
+.sj-clock .digits div.six .d2,
+.sj-clock .digits div.six .d4,
+.sj-clock .digits div.six .d3,
+.sj-clock .digits div.six .d6,
+.sj-clock .digits div.six .d7{
+  opacity: 1;
+}
+
+
+/* 7 */
+
+.sj-clock .digits div.seven .d1,
+.sj-clock .digits div.seven .d5,
+.sj-clock .digits div.seven .d7{
+  opacity: 1;
+}
+
+/* 8 */
+
+.sj-clock .digits div.eight .d1,
+.sj-clock .digits div.eight .d2,
+.sj-clock .digits div.eight .d3,
+.sj-clock .digits div.eight .d4,
+.sj-clock .digits div.eight .d5,
+.sj-clock .digits div.eight .d6,
+.sj-clock .digits div.eight .d7{
+  opacity: 1;
+}
+
+/* 9 */
+
+.sj-clock .digits div.nine .d1,
+.sj-clock .digits div.nine .d2,
+.sj-clock .digits div.nine .d3,
+.sj-clock .digits div.nine .d4,
+.sj-clock .digits div.nine .d5,
+.sj-clock .digits div.nine .d7{
+  opacity: 1;
+}
+
+/* 0 */
+
+.sj-clock .digits div.zero .d1,
+.sj-clock .digits div.zero .d3,
+.sj-clock .digits div.zero .d4,
+.sj-clock .digits div.zero .d5,
+.sj-clock .digits div.zero .d6,
+.sj-clock .digits div.zero .d7{
+  opacity: 1;
+}
+
+
+/* The dots */
+
+.sj-clock .digits div.dots{
+  width: @clock-digital-digit-stroke;
+}
+
+.sj-clock .digits div.dots:before,
+.sj-clock .digits div.dots:after{
+  width: @clock-digital-digit-stroke;
+  height: @clock-digital-digit-stroke;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+}
+
+.sj-clock .digits div.dots:after{
+  top: 34px;
+}
+
+
+/*-------------------------
+	Weekdays
+--------------------------*/
+
+
+.sj-clock .weekdays{
+  font-size: 12px;
+  position: absolute;
+  width: 100%;
+  top: 10px;
+  left: 0;
+  text-align: center;
+}
+
+
+.sj-clock .weekdays span{
+  opacity: 0.4;
+  padding: 0 10px;
+}
+
+.sj-clock .weekdays span.active{
+  opacity: 1;
+}
+
+
+/*-------------------------
+		AM/PM
+--------------------------*/
+
+
+.sj-clock .ampm{
+  position: absolute;
+  bottom: 3px;
+  right: 20px;
+  font-size: 12px;
+}
+

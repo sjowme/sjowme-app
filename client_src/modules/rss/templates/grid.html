@@ -1,0 +1,9 @@
+<div class="uk-grid uk-grid-match" :class="gridClass" data-uk-grid-match="target:'>div>.uk-panel'" data-uk-grid-margin>
+    <div v-for="article in articles">
+        <div class="uk-panel">
+            <h4 class="uk-text-truncate uk-margin-small-bottom">{{ article.title }}</h4>
+            <div>{{ article.content }}</div>
+            <em class="uk-text-small">{{ article.feed.name }} | {{ article.published | datetime }}</em>
+        </div>
+    </div>
+</div>

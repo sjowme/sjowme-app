@@ -1,0 +1,70 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+@import 'https://fonts.googleapis.com/css?family=Play:400,700';
+@import 'https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i';
+
+@import "../theme.less";
+@import "../sjowme/screen.less";
+@import "../sjowme/upload.less";
+@import "../sjowme/slide-edit.less";
+
+@import "/assets/spectrum/spectrum.css";
+
+//import modules
+@import "../modules/modules";
+
+@screen-module-edge-hor: 3%;
+@screen-module-edge-vert: 2%;
+
+@screen-module-box-padding: 10px;
+
+@screen-slide-small-factor: 0.3;
+@screen-slide-medium-factor: 0.5;
+@screen-slide-large-factor: 0.8;
+@screen-slide-xlarge-factor: 1;
+@screen-slide-xxlarge-factor: 1.2;
+
+@utility-container-large-max-width:             1400px;
+@breakpoint-medium:                             800px;
+
+
+.hook-navbar-misc() {
+
+  .sj-navbar {
+    padding-top: @global-margin;
+    .uk-container {
+      max-width: 1750px;
+    }
+  }
+
+  /* Desktop and smaller */
+  @media (max-width: @breakpoint-large-max) {
+    .sj-navbar {
+      padding-bottom: @global-padding;
+    }
+  }
+
+  @media (max-width: @breakpoint-medium) {
+    .uk-navbar-nav > li > a {
+      padding: 0 20px;
+    }
+  }
+  @media (max-width: @breakpoint-small) {
+    .uk-navbar-brand {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .uk-navbar-nav > li > a {
+      padding: 0 15px;
+    }
+  }
+  @media (max-width: 400px) {
+    .uk-navbar-nav > li > a {
+      padding: 0 10px;
+      font-size: 14px;
+    }
+  }
+  .uk-navbar-flip >:last-child {
+    padding-right: 0;
+  }
+}

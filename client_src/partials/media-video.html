@@ -1,0 +1,15 @@
+<div v-if="video_info.type === 'youtube'" class="uk-position-cover">
+    <div
+         :id="'youtube-' + player_id"
+         class="yt-base"
+         :width="slide.background.width || 640"
+         :height="slide.background.height || 480"></div>
+</div>
+
+
+<iframe v-else :src="slide.background.path"
+        :id="'vimeo-' + player_id"
+        :width="slide.background.width || 640"
+        :height="slide.background.height || 480"
+        allowfullscreen></iframe>
+

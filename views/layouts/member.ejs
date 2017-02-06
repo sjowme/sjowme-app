@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title><%= title %> - <%= page %></title>
+    <link rel="stylesheet" href="/assets/css/member.css">
+    <link rel="icon" href="/assets/images/favicon.ico"/>
+
+    <script>var $default_locale = '<%= default_locale %>';</script>
+    <script>var $data = <%- JSON.stringify(data) %>;</script>
+</head>
+<body>
+<div class="uk-block uk-block-default sj-navbar">
+    <% if (environment !== 'production') {%><div class="uk-badge uk-badge-warning uk-position-top-right"><%= environment %></div><%}%>
+    <div class="uk-container uk-container-center">
+        <%- include('../partials/header.member.ejs', {data}) %>
+    </div>
+</div>
+<div class="uk-block uk-block-default">
+    <div class="uk-container uk-container-center">
+        <main style="min-height: 60vh;">
+            <%- body %>
+        </main>
+    </div>
+</div>
+<div class="sj-footer uk-block uk-block-secondary">
+    <div class="uk-container uk-container-center">
+        <footer>
+            <div class="uk-text-center uk-contrast">
+                <h4 class="uk-text-muted">&copy; sjow<span class="uk-text-primary">.</span>me <%= (new Date()).getFullYear() %></h4>
+                <a href="http://www.bixie.nl" target="_blank" class="uk-link-muted"><i class="uk-icon-bixie uk-margin-small-right"></i></a>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/assets/socket.io-file-client/socket.io-file-client.js"></script>
+<script src="/assets/jquery/dist/jquery.min.js"></script>
+<script src="/assets/uikit/js/uikit.min.js"></script>
+<% scripts.forEach(function (script) { %>
+<script src="<%= script.src %>"></script>
+<% }); %>
+<script>
+    jQuery(function ($) {
+        //set active menu
+        var path = document.location.pathname;
+        $('a[href="' + path + '"]').parent().addClass('uk-active');
+    });
+</script>
+
+</body>
+</html>
+

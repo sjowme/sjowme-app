@@ -1,0 +1,22 @@
+<div class="uk-form-row">
+    <span class="uk-form-label">{{ 'Actief' | trans }}</span>
+    <div class="uk-form-controls">
+        <label><input type="checkbox" v-model="active" class="uk-margin-small-right"/>Activeer module</label>
+    </div>
+</div>
+
+<div class="uk-form-row">
+    <span class="uk-form-label">
+        <span class="uk-flex uk-flex-middle uk-flex-space-between">
+            <span class="uk-flex-item-1">{{ 'Positie' | trans }}</span>
+            <info-icon class="uk-margin-small-left" url="//www.sjow.me/positie/" size="uk-icon-small"
+                       :title="$trans('Meer informatie')"></info-icon>
+        </span>
+    </span>
+    <div class="uk-form-controls">
+        <module-position :config.sync="config" :slide="slide" :name="module.name" :active="active"></module-position>
+    </div>
+</div>
+
+<fields :model.sync="config" :config="$options.basic_fields" template="formrow"></fields>
+

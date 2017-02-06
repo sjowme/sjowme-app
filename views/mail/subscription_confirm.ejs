@@ -1,0 +1,19 @@
+<%- include('./mail-head.ejs') %>
+
+<p>Geachte <%= data.user.name || 'Gebruiker' %>,</p>
+
+<p>Bedankt voor het afsluiten van het een abonnement bij SjowMe.</p>
+
+<h3><%= data.subscription.name %></h3>
+
+<p>Geldig van <%= data.subscription.starts_at.toLocaleString().split(' ')[0] %> tot <%= data.subscription.expires_at.toLocaleString().split(' ')[0] %></p>
+
+<p>De betaling van &euro; <%= data.invoice.total_price.toLocaleString() %> is bekend onder nummer <%= data.invoice.transaction_id %>.</p>
+
+<p>U kunt de factuur downloaden vanuit uw <a href="<%=base_url%>/profiel">profiel bij SjowMe</a>.</p>
+
+<p>met vriendelijke groeten,</p>
+
+<p>Het SjowMe Team</p>
+
+<%- include('./mail-foot.ejs') %>

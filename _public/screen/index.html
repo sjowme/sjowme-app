@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SjowMe!</title>
+
+    <link rel="stylesheet" href="/assets/css/screen.css">
+    <link rel="icon" href="/assets/images/favicon.ico"/>
+    <script>var $default_locale = 'nl-NL';</script>
+
+</head>
+<body>
+
+    <div id="app" class="uk-height-viewport uk-responsive-height">
+        <component v-ref:slideshow :is="component" :viewdata="viewdata"></component>
+    </div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/assets/jquery/dist/jquery.min.js"></script>
+    <script src="/assets/uikit/js/uikit.min.js"></script>
+    <script src="/assets/uikit/js/components/notify.min.js"></script>
+    <script src="/assets/lodash/dist/lodash.min.js"></script>
+    <script src="/assets/vue/vue.js"></script>
+    <script src="/assets/vimeo-player-js/dist/player.min.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,8 @@
+<ul class="uk-list uk-list-space">
+
+    <li v-for="tweet in tweets">
+        <p>{{ tweet.text }}</p>
+        <small>{{ tweet.user.screen_name }} - {{ tweet.created_at | datetime }}</small>
+    </li>
+
+</ul>

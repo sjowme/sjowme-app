@@ -1,0 +1,38 @@
+<header>
+    <nav class="uk-navbar">
+
+        <a href="http://www.sjow.me" class="uk-navbar-brand">
+            <img src="/assets/images/sjowmelogo_mobile.png" class="uk-responsive-height uk-visible-medium-s" alt="Sjowme!"/>
+            <img src="/assets/images/sjowmelogo.png" class="uk-responsive-height uk-hidden-medium-s" alt="Sjowme!"/>
+        </a>
+
+        <% if (data.member_id) { %>
+        <div class="uk-navbar-flip">
+            <ul class="uk-navbar-nav">
+                <li <% if (page == 'Member') {%> class="uk-active uk-hidden-medium-s"<%}else{%> class="uk-hidden-medium-s"<%}%>>
+                    <a href="/" title="Dashboard" data-uk-tooltip="delay:300">
+                        <i class="uk-icon-dashboard uk-icon-justify"></i></a>
+                </li>
+                <li <% if (page == 'Profiel') {%> class="uk-active"<%}%>>
+                    <a href="/profiel" title="Profiel" data-uk-tooltip="delay:300">
+                        <i class="uk-icon-user uk-icon-justify"></i></a>
+                </li>
+                <li><a href="//www.sjow.me/informatie-vooraf/" :title="$trans('Informatie en hulp')"
+                       data-uk-tooltip="delay:100" data-uk-lightbox="width:1024,height:768" data-lightbox-type="iframe">
+                        <i class="uk-icon-info uk-icon-justify"></i>
+                    </a></li>
+                <% if (data.user.isAdmin) {%>
+                <li><a href="<%= admin_url %>" title="Admin" data-uk-tooltip="delay:300">
+                        <i class="uk-icon-cogs uk-icon-justify"></i></a></li>
+                <%}%>
+            </ul>
+            <div class="uk-navbar-content uk-flex uk-flex-middle">
+                <a href="/logout" class="uk-link-muted uk-margin-right" title="Uitloggen" data-uk-tooltip="delay:300">
+                    <i class="uk-icon-power-off uk-icon-justify uk-icon-hover"></i></a>
+                <p class="uk-margin-remove uk-hidden-medium-s"><%= data.user.name %></p>
+                <img class="uk-border-circle uk-margin-small-left" style="height: 30px" src="<%= data.user.image_url %>" alt="">
+            </div>
+        </div>
+        <% } %>
+    </nav>
+</header>

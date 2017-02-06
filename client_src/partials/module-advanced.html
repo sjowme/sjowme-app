@@ -1,0 +1,12 @@
+<div class="uk-grid uk-grid-width-medium-1-2" data-uk-grid-margin>
+    <div>
+        <fields v-if="module.fields.advanced_1"
+                :model.sync="config"
+                :config="module.fields.advanced_1" template="formrow"></fields>
+    </div>
+    <div>
+        <fields v-if="module.fields.advanced_2"
+                :model.sync="config"
+                :config="module.fields.advanced_2" template="formrow"></fields>
+    </div>
+</div>

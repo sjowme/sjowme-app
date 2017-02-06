@@ -1,0 +1,17 @@
+<%- include('./mail-head.ejs') %>
+
+<p>Geachte <%= data.subscription.user_name || 'Gebruiker' %>,</p>
+
+<p>Uw abonnement bij SjowMe verloopt over <%=data.days_to_expire%> dagen.</p>
+
+<h3><%= data.subscription.name %></h3>
+
+<p>Geldig van <%= data.subscription.starts_at.toLocaleString().split(' ')[0] %> tot <%= data.subscription.expires_at.toLocaleString().split(' ')[0] %></p>
+
+<p>Ga naar uw <a href="<%=base_url%>/profiel">profiel bij SjowMe</a> om een nieuw abonnement af te sluiten.</p>
+
+<p>Met vriendelijke groeten,</p>
+
+<p>Het SjowMe Team</p>
+
+<%- include('./mail-foot.ejs') %>

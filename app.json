@@ -1,0 +1,37 @@
+{
+  "name": "sjowme-app",
+  "scripts": {
+  },
+  "env": {
+    "SJ_DOMAIN_NAME": "preview.bixie.org",
+    "SJ_ENV": "preview",
+    "SJ_GOOGLE_OAUTH_CLIENTID": {
+      "required": true
+    },
+    "SJ_GOOGLE_OAUTH_CLIENTSECRET": {
+      "required": true
+    },
+    "SJ_PORT_REWRITE": {
+      "required": true
+    },
+    "SJ_ROOT_ADMIN": {
+      "required": true
+    },
+    "SJ_SUBDOMAIN_MAIN": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}

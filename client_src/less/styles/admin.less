@@ -1,0 +1,57 @@
+// Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+@import 'https://fonts.googleapis.com/css?family=Play:400,700';
+@import 'https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i';
+
+@import "../theme.less";
+@import "../sjowme/screen.less";
+@import "../sjowme/upload.less";
+@import "../sjowme/slide-edit.less";
+
+//import modules
+@import "../modules/modules";
+
+@import "/assets/spectrum/spectrum.css";
+
+@block-padding-vertical:                        20px;
+@block-padding-vertical-large:                  30px;
+@block-large-padding-vertical:                  @block-padding-vertical;
+@block-large-padding-vertical-medium:           @block-padding-vertical-large;
+@block-large-padding-vertical-large:            70px;
+
+@navbar-background: @global-background;
+
+@screen-slide-small-factor: 0.3;
+@screen-slide-medium-factor: 0.5;
+@screen-slide-large-factor: 0.8;
+@screen-slide-xlarge-factor: 1;
+@screen-slide-xxlarge-factor: 1.2;
+
+@utility-container-large-max-width:             1400px;
+
+.sj-toolbar > div {
+  height: 50px;
+  padding: 0 25px;
+  .uk-subnav {
+    margin-top: 5px;
+  }
+}
+
+.hook-navbar() {
+  box-shadow: @panel-box-shadow-horizontal @panel-box-shadow-vertical @panel-box-shadow-blur @panel-box-shadow-spread @panel-box-shadow-color;
+}
+
+.hook-navbar-misc() {
+  @media (max-width: @breakpoint-xlarge) {
+    .uk-navbar-nav > li > a {
+      padding: 0 15px;
+    }
+  }
+  @media (max-width: 905px) {
+    .uk-navbar-nav > li > a {
+      padding: 0 10px;
+      font-size: 14px;
+    }
+  }
+
+}

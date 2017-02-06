@@ -1,0 +1,123 @@
+/*
+* Slide edit and controls
+*/
+
+/*
+* controls/preview
+=========================================*/
+
+.sj-edit-container {
+  max-width: 1900px;
+  margin: 0 auto;
+}
+
+.sj-preview {
+  background: @block-muted-background;
+}
+
+.sj-controls {
+  min-height: 30vh;
+  background: @global-background;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  & > .uk-panel {
+    padding: @global-margin-small @global-margin;
+  }
+}
+
+@media (min-width: @breakpoint-small-max) {
+  .sj-preview {
+     overflow: hidden;
+     height: 30vh;
+  }
+
+  .sj-controls {
+    min-height: 70vh;
+    z-index: 2;
+  }
+
+}
+
+.sj-preview-grid {
+  max-height: 95%;
+}
+
+.sj-preview-nav {
+  .uk-container-center {
+    width: 90%;
+  }
+}
+.sj-preview-slide .uk-position-relative {
+  padding-top: 10px;
+}
+.sj-preview-tools {
+
+}
+
+@media (min-width: @breakpoint-xlarge) {
+  .sj-preview-slide .uk-position-relative {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1550px) {
+  .sj-preview-slide .uk-position-relative {
+    width: 75%;
+  }
+}
+
+/*
+* preview grid
+=========================================*/
+
+//slidenavs
+.sj-preview .uk-slidenav-position {
+  height: 50px;
+  .uk-slidenav-previous {
+    left: 5px;
+  }
+  .uk-slidenav-next {
+    right: 5px;
+  }
+}
+.sj-preview .uk-slidenav {
+  display: block;
+}
+
+//thumbnav
+.sj-preview .uk-thumbnav {
+  /*componsate neg. grid margin for centering*/
+  margin-left: -5px;
+}
+
+//control tabs
+.sj-controls .uk-tab > li > a {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.sj-controls .uk-switcher > li > .uk-panel {
+  padding: 0 15px;
+}
+
+//edit buttons in collection thumbs
+.sj-collection-buttons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 15px;
+  background: fade(@global-background, 40);
+  .uk-icon-edit {
+    /*align icons*/
+    margin-top: 4px;
+  }
+}
+
+//module position picker
+.sj-pick-position {
+  border: 1px solid @global-link-color;
+  padding: @global-padding;
+  max-width: 300px;
+}
+.sj-pick-position > div {
+  min-height: 100px;
+}

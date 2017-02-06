@@ -1,0 +1,16 @@
+node_modules
+
+*.log
+.env.bat
+
+_previews
+_media
+content/images/*
+!content/images/modules
+_public/assets/*
+!_public/assets/images
+!_public/assets/fonts
+
+_public/admin/js
+_public/member/js
+_public/screen/js

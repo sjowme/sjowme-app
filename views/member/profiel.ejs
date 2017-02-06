@@ -1,0 +1,44 @@
+<div id="app">
+
+
+    <div class="uk-margin uk-flex uk-flex-middle">
+        <img class="uk-border-circle uk-margin-right" src="<%= data.user.image_url %>" alt="">
+        <h1 class="uk-margin-remove"><%= data.user.name %></h1>
+    </div>
+
+    <div class="uk-grid uk-grid-width-medium-1-2" data-uk-grid-margin>
+        <div>
+
+            <div class="uk-panel uk-panel-box">
+
+                <dl class="uk-description-list-horizontal">
+                    <dt>Naam:</dt>
+                    <dd><%= data.user.name || '-' %></dd>
+                    <dt>Email:</dt>
+                    <dd><%= data.user.email %></dd>
+                    <dt>Company:</dt>
+                    <dd><%= data.user.company || '-' %></dd>
+                </dl>
+
+            </div>
+        </div>
+
+        <div>
+            <div class="uk-panel uk-panel-box">
+
+                <dl class="uk-description-list-horizontal">
+                    <dt>Naam:</dt>
+                    <dd><%= data.user.name || '-' %></dd>
+                    <dt>Email:</dt>
+                    <dd><%= data.user.email %></dd>
+                    <dt>Company:</dt>
+                    <dd><%= data.user.company || '-' %></dd>
+                </dl>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

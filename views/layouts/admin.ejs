@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title><%= title %> - <%= page %></title>
+    <link rel="stylesheet" href="/assets/css/admin.css">
+    <link rel="icon" href="/assets/images/favicon.ico"/>
+
+    <script>var $default_locale = '<%= default_locale %>';</script>
+    <script>var $data = <%- JSON.stringify(data) %>;</script>
+</head>
+<body>
+<% if (data.member_id) { %>
+<div class="uk-block uk-block-secondary uk-padding-remove uk-hidden-mini">
+    <% if (environment !== 'production') {%><div class="uk-badge uk-badge-warning uk-position-top-right"><%= environment %></div><%}%>
+    <div class="uk-container uk-container-center">
+        <div class="sj-toolbar uk-flex uk-flex-middle uk-flex-space-between uk-contrast">
+            <div class="uk-flex uk-flex-middle">
+                <img class="uk-border-circle uk-margin-small-right" style="height: 30px" src="<%= data.user.image_url %>" alt="">
+                <p class="uk-margin-remove uk-hidden-small"><%= data.user.name %></p>
+            </div>
+            <div class="uk-flex uk-flex-middle">
+                <ul class="uk-subnav uk-subnav-line">
+                    <li><a href="<%= member_url %>/demo" target="_blank">Demo</a></li>
+                    <li><a href="/logout">Uitloggen</a></li>
+                    <li><a href="<%= member_url %>">Members</a></li>
+                    <li><a href="<%= home_url %>">Sjowme</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<% } %>
+<div class="uk-block uk-block-muted">
+    <div class="uk-container uk-container-center">
+        <header>
+            <% if (data.member_id) { %>
+            <nav class="uk-navbar">
+
+                <a href="http://www.sjow.me" class="uk-navbar-brand">
+                    <img src="/assets/images/sjowmelogo_mobile.png" class="uk-responsive-height" alt="Sjowme!"/>
+                </a>
+
+                <ul class="uk-navbar-nav uk-hidden-small">
+                    <%- include('../partials/menu.admin.ejs', {data}) %>
+                </ul>
+
+                <div class="uk-navbar-flip uk-navbar-content uk-visible-small">
+                    <a href="#offcanvas-menu" data-uk-offcanvas="{mode:'slide'}"><i class="uk-icon-bars"></i></a>
+                </div>
+            </nav>
+            <% } else { %>
+            <div class="uk-text-center">
+                <a href="http://www.sjow.me" class="">
+                    <img src="/assets/images/sjowmelogo_large.png" class="uk-responsive-height" alt="Sjowme!"/>
+                </a>
+            </div>
+
+            <% } %>
+        </header>
+    </div>
+</div>
+<div class="uk-block uk-block-muted">
+    <div class="uk-container uk-container-center">
+        <main>
+            <%- body %>
+        </main>
+    </div>
+</div>
+<div class="uk-block uk-block-secondary">
+    <div class="uk-container uk-container-center">
+        <footer>
+            <div class="uk-text-center uk-contrast">
+                <h4 class="uk-text-muted">&copy; sjow<span class="uk-text-primary">.</span>me <%= (new Date()).getFullYear() %></h4>
+                <em class="uk-text-muted">Website door <a href="http://www.bixie.nl"><i class="uk-icon-bixie uk-margin-small-right"></i>Bixie</a></em>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<div id="offcanvas-menu" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar uk-offcanvas-bar-flip">
+        <p class="uk-text-center">
+            <img src="assets/images/sjowmelogo.png" alt="sjowme"/>
+        </p>
+        <ul class="uk-nav uk-nav-offcanvas">
+            <%- include('../partials/menu.admin.ejs', {data}) %>
+        </ul>
+        <ul class="uk-nav uk-nav-offcanvas uk-margin-top uk-visible-mini">
+            <li><a href="<%= home_url %>">Sjowme</a></li>
+            <li><a href="<%= member_url %>">Members</a></li>
+            <li><a href="/logout">Uitloggen</a></li>
+        </ul>
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/assets/socket.io-file-client/socket.io-file-client.js"></script>
+<script src="/assets/jquery/dist/jquery.min.js"></script>
+<script src="/assets/uikit/js/uikit.min.js"></script>
+<% scripts.forEach(function (script) { %>
+<script src="<%= script.src %>"></script>
+<% }); %>
+<script>
+    jQuery(function ($) {
+        //set active menu
+        var path = document.location.pathname;
+        $('a[href="' + path + '"]').parent().addClass('uk-active');
+    });
+</script>
+
+</body>
+</html>
+

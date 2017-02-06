@@ -1,0 +1,9 @@
+<hr/>
+<div class="uk-grid uk-grid-small uk-grid-match uk-grid-width-1-3 uk-text-center">
+    <div v-for="daily_weather in threeDayWeather">
+        <small>{{ dayFromDailyTime(daily_weather.time) }}</small>
+        <h4 class="uk-margin-remove">{{ roundTemp(daily_weather.temperatureMax, true) }} &deg;{{ config.forecast.units }}</h4>
+        <div><i class="wi" :class="'wi-forecast-io-' + daily_weather.icon"></i></div>
+        <small v-if="config.show_text">{{ 'forecast-' + daily_weather.icon | trans }}</small>
+    </div>
+</div>

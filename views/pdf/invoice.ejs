@@ -1,0 +1,156 @@
+<html lang="<%=locale_code%>>">
+<head>
+    <meta charset="utf8">
+    <title>Factuur SjowMe</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", sans-serif;
+            font-weight: 500;
+            font-size: 12px;
+            background: white;
+            -webkit-print-color-adjust: exact;
+            box-sizing: border-box;
+        }
+        .page {
+            padding: 5mm 15mm;
+        }
+        .uk-text-muted {
+            color: #aeaeae;
+        }
+        .uk-text-primary {
+            color: #e30712;
+        }
+        .uk-text-center {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border: 0;
+        }
+        td {
+            font-size: 12px;
+            padding: 5px 0;
+        }
+        td.subtotal {
+            border-top: 1px solid #e30712;
+        }
+        td.total {
+            border-top: 2px solid #e30712;
+            border-bottom:  4px double #e30712;
+        }
+        .uk-alert-success {
+            margin: 15px 0;
+            text-align: center;
+            padding: 10px;
+            background: #97d57c;
+            color: #1d1d1d;
+            border: 1px solid rgba(151, 213, 124, 0.5);
+        }
+        .uk-alert-danger {
+            margin: 15px 0;
+            text-align: center;
+            padding: 10px;
+            background: #eb5e74;
+            color: #1d1d1d;
+            border: 1px solid rgba(235, 94, 116, 0.5);
+        }
+    </style>
+</head>
+<body>
+<div class="uk-text-center">
+    <img src="<%=base_url%>/assets/images/header-pdf.jpg" alt="SjowMe"/>
+</div>
+
+
+<div class="page">
+    <p>
+        <strong>Aan:</strong><br/>
+        <%=invoice.address.name%><br/>
+        <%=invoice.address.email%><br/>
+
+    </p>
+    <br/>
+    <br/>
+
+    <h1 class="uk-text-primary">Factuur</h1>
+
+    <br/>
+    <br/>
+    <hr/>
+
+    <table>
+        <tr>
+            <td>Factuurnummer</td>
+            <td><%=invoice.number%></td>
+            <td>Datum</td>
+            <td><%=invoice.created_at.toLocaleDateString(locale_code)%></td>
+        </tr>
+        <tr>
+            <td>Referentie</td>
+            <td><%=invoice.reference%></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <hr/>
+
+    <table>
+        <% invoice.data.specifications.forEach(spec => { %>
+        <tr>
+            <td style="width: 60%">
+               <strong><%=spec.description%></strong><br/>
+                <%=spec.duration%>
+            </td>
+            <td colspan="2" style="text-align:right">€ <%=spec.price.toLocaleString(locale_code, {minimumFractionDigits: 2})%></td>
+        </tr>
+        <% }); %>
+        <tr>
+            <td>
+                Subtotaal
+            </td>
+            <td style="width: 20%"></td>
+            <td style="width: 20%;text-align:right" class="subtotal">€ <%=invoice.net_price.toLocaleString(locale_code, {minimumFractionDigits: 2})%></td>
+        </tr>
+        <tr>
+            <td>
+                BTW bedrag (<%=invoice.vat_perc%>%)
+            </td>
+            <td style="width: 20%;text-align:right">€ <%=invoice.vat_amount.toLocaleString(locale_code, {minimumFractionDigits: 2})%></td>
+            <td style="width: 20%"></td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Totaal</strong>
+            </td>
+            <td style="width: 20%"></td>
+            <td style="width: 20%;text-align:right" class="total">
+                <strong>€ <%=invoice.total_price.toLocaleString(locale_code, {minimumFractionDigits: 2})%></strong>
+            </td>
+        </tr>
+    </table>
+
+    <% if (invoice.transaction.status === 'paid') { %>
+        <div class="uk-alert-success">
+            Deze factuur is voldaan via <%=invoice.transaction.method%> op
+            <%=(new Date(invoice.transaction.createdDatetime)).toLocaleString(locale_code) %>, met
+            als transactie ID <%=invoice.transaction.id%>.
+        </div>
+    <% } %>
+
+    <% if (invoice.transaction.status !== 'paid') { %>
+        <div class="uk-alert-danger">
+            Deze factuur is niet voldaan! Status betaling <%=invoice.transaction.method%> op
+            <%=(new Date(invoice.transaction.createdDatetime)).toLocaleString(locale_code) %>: <strong><%=invoice.transaction.status%></strong>.
+            Transactie ID <%=invoice.transaction.id%>.
+        </div>
+    <% } %>
+
+</div>
+
+
+
+</body>
+</html>

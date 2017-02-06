@@ -1,0 +1,52 @@
+/*
+* media-upload
+*/
+
+
+@media-upload-border-color: @global-border;
+@media-upload-border-width: 2px;
+
+.sj-media-drop-overlay-empty, .sj-media-drop-overlay-progress, .sj-media-drop-overlay-filled {
+  display: none;
+}
+.sj-media-drop-empty {
+  display: inline-block;
+  min-width: 100%;
+  background: @global-muted-background;
+  border: @media-upload-border-width dashed @media-upload-border-color;
+  .uk-overlay-panel {
+    padding: 0;
+  }
+  canvas {
+    min-height: 60px;
+  }
+  .uk-form-file {
+    margin-bottom: 4px !important;
+    color: @global-link-color;
+  }
+}
+
+.sj-media-drop-empty:not(.sj-media-drop-progress) .sj-media-drop-overlay-empty {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.sj-media-drop-progress .sj-media-drop-overlay-progress {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.sj-media-drop-filled:not(.sj-media-drop-progress) .sj-media-drop-overlay-filled {
+  display: block;
+  left: auto;
+}
+
+.sj-media-drop .uk-panel-box {
+  background-color: fade(@panel-box-background, 50);
+}
+
+.sj-media-drop-dragover {
+  box-shadow:0 0 20px rgba(100,100,100,.3)
+}
+
+

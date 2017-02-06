@@ -1,0 +1,7 @@
+<ul class="uk-list uk-list-space">
+    <li v-for="article in articles">
+        <h4 class="uk-text-truncate uk-margin-small-bottom">{{ article.title }}</h4>
+        <div>{{ article.content }}</div>
+        <em class="uk-text-small">{{ article.feed.name }} | {{ article.published | datetime }}</em>
+    </li>
+</ul>

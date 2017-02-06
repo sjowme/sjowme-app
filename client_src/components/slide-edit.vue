@@ -385,7 +385,7 @@
                 return positions;
             },
             current_module_data() {
-                return _.find(this.modules, {name: this.current_module.name, name: this.current_module.label});
+                return _.find(this.modules, {name: this.current_module.name});
             }
         },
 
@@ -484,7 +484,7 @@
 						message = this.$trans('Positie is al in gebruik door module %label%.', {label: this.current_positions[pos].label})
 					}
 					else {
-						message = this.$trans('Positie is al in gebruik door module %name%.', {label: this.current_positions[pos].name})
+						message = this.$trans('Positie is al in gebruik door module %name%.', {label: this.current_positions[pos].label})
 					}
                 }
                 if (pos == this.slide.config.title.position && this.slide.config.title.active && module_name !== 'title') {

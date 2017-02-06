@@ -53,7 +53,8 @@ var Screen = {
             location.reload(true);
         });
         this.socket.on('module.response', (module, task, data) => {
-            console.log(`Data received from server from ${task} for ${module}`);
+			var dt = Date();
+            console.log(`Data received from server from ${task} for ${module} at ` + dt);
             this.$broadcast(`module.response.${module}.${task}`, data);
         });
         this.socket.on('screen.error', error => {

@@ -56,20 +56,12 @@ module.exports = {
 
     commands: {
         getTweets(config, params, cb) {
-            if (!config.search_term) {
-                return cb(null, {
-                    error: 'Geen search term bekend.',
-                    tweets: {}
-                });
+            if (!params.search_term) {
+                return cb(null,  []);
             }
-            twitter.search(params.search_term, params.count),
-                (err, tweets) => {
-                    if (err) {
-                        //todo retry/return cache
-                        return cb(err);
-                    }
-                    cb(null, {error: false, tweets});
-                });
+            twitter.search(params.search_term, params.count)
+                .then(tweets => cb(null, {tweets}))
+                .catch(err => cb(err));
         }
     }
 };

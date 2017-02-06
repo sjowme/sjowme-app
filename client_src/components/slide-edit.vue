@@ -261,7 +261,7 @@
                                                 :class="{'uk-active': current_module.name == mod.name}">
                                                 <a @click="setModule(mod)">{{mod.label}}</a>
 												<info-icon
-													:class="enable-{{mod.name}}"
+													:class="{'uk-active': mod.name == 'twitter'}"
 													:title="$trans('U kunt maar 1x deze module gebruiken per sjow.')"></info-icon>
                                             </li>
                                         </ul>

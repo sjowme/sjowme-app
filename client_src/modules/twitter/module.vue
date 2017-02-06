@@ -38,7 +38,7 @@
 
         watch: {
             'config.search_term + config.count': function() {
-                this.getWeather();
+                this.getTweets();
             }
         },
 

@@ -19,8 +19,10 @@
         },
 
         ready() {
-            this.interval = setInterval(this.getTweets, (15 * 60 * 1000));
-			this.getTweets();
+			if(config.search_term) {
+				this.interval = setInterval(this.getTweets, (15 * 60 * 1000));
+				this.getTweets();
+			}
         },
 
         destroyed() {
@@ -40,6 +42,7 @@
         watch: {
             'config.search_term + config.count': function() {
                 this.getTweets();
+				console.log('Watch Tweets');
             }
         },
 

@@ -40,12 +40,6 @@
             }
         },
 
-        watch: {
-            'config.search_term + config.count': function() {
-                this.getTweets();
-            }
-        },
-
         methods: {
             getTweets() {
                 this.$parent.moduleCommand('twitter', 'getTweets', {search_term: this.config.search_term, count: this.config.count});

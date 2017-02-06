@@ -42,10 +42,11 @@
             'module.response.twitter.getTweets': function (res) {
                 this.tweets = res.tweets;
             }
+			console.log(res);
         },
 
-        watch: {
-            'config.search_term + config.count': function() {
+        methods: {
+            getTweets() {
                 this.$parent.moduleCommand('twitter', 'getTweets', {search_term: this.config.search_term, count: this.config.count});
             }
         }

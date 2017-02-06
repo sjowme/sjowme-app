@@ -14,17 +14,31 @@
 
         data() {
             return {
+                interval: 0,
                 tweets: []
             };
         },
 
-        created() {
-            this.getTweets();
+        ready() {
+            if (this.config.location.gid) {
+                this.interval = setInterval(this.getTweets, (15 * 60 * 1000));
+                this.getTweets();
+            }
+        },
+
+        destroyed() {
+            clearInterval(this.interval);
         },
 
         events: {
             'module.response.twitter.getTweets': function (res) {
                 this.tweets = res.tweets;
+            }
+        },
+
+        watch: {
+            'config.search_term + config.count': function() {
+                this.getWeather();
             }
         },
 

@@ -5,24 +5,6 @@ var Twitter = require('twitter');
 var client = new Twitter(config.twitter);
 
 
-client.stream('statuses/filter', {track: 'internet'},  function(stream) {
-	stream.on('connected', function (res) {
-		console.log('stream connected (' + res.statusCode + ')');
-	});
-	
-	stream.on('reconnect', function (req, res, interval) {
-		console.log('stream reconnecting in ' + interval + ' (' + res.statusCode + ')');
-	});
-	
-	stream.on('data', function(tweet) {
-		console.log(tweet.text);
-	});
-
-	stream.on('error', function(error) {
-		console.log(error);
-	});
-});
-
 module.exports = {
     getTweets(search_term, count) {
         return new Promise((resolve, reject) => {
@@ -36,6 +18,25 @@ module.exports = {
                 }
                 resolve(res.statuses);
             });
+			
+			client.stream('statuses/filter', {track: 'internet'},  function(stream) {
+				stream.on('connected', function (res) {
+					console.log('stream connected (' + res.statusCode + ')');
+				});
+				
+				stream.on('reconnect', function (req, res, interval) {
+					console.log('stream reconnecting in ' + interval + ' (' + res.statusCode + ')');
+				});
+				
+				stream.on('data', function(tweet) {
+					console.log(tweet.text);
+				});
+
+				stream.on('error', function(error) {
+					console.log(error);
+				});
+			});
+			
         });
     }
 };

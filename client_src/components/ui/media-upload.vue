@@ -22,6 +22,8 @@
 
                     <div v-if="message" class="uk-alert uk-alert-warning">{{ message }}</div>
 
+					<div class="sj-media-info-box">Test informatie.</div>
+					
                     <div v-el:drop class="uk-overlay sj-media-drop sj-media-drop-empty">
                         <canvas v-el:canvas height="0" width="0"></canvas>
                         <div class="sj-media-drop-overlay-empty uk-overlay-panel uk-flex uk-flex-middle uk-flex-center">

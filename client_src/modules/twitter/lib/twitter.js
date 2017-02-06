@@ -5,7 +5,7 @@ var Twitter = require('twitter');
 var client = new Twitter(config.twitter);
 
 
-client.stream('statuses/filter', {track: 'twitter'},  function(stream) {
+client.stream('statuses/filter', {track: 'internet'},  function(stream) {
   stream.on('data', function(tweet) {
     console.log(tweet.text);
   });

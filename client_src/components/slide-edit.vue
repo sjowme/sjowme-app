@@ -262,7 +262,7 @@
                                                 <a @click="setModule(mod)">{{mod.label}}</a>
 												<div :class="{'uk-active': mod.name == 'twitter' || mod.name == 'weather' || mod.name == 'rss'}">
 													<info-icon
-														:title="$trans('U kunt maar 1x deze module gebruiken per sjow.')"></info-icon>
+														:title="$trans('U kunt deze module maar 1x gebruiken per sjow.')"></info-icon>
 												</div>
                                             </li>
                                         </ul>

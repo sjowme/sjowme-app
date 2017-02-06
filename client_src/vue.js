@@ -24,6 +24,7 @@ Vue.component('input-filter', require('./components/ui/input-filter.vue'));
 Vue.component('input-tags', require('./components/ui/input-tags.vue'));
 Vue.component('textfield-edit', require('./components/ui/textfield-edit.vue'));
 Vue.component('info-icon', require('./components/ui/info-icon.vue'));
+Vue.component('exclamation-icon', require('./components/ui/exclamation-icon.vue'));
 
 Vue.directive('check-all', require('./directives/check-all'));
 Vue.directive('order', require('./directives/order'));

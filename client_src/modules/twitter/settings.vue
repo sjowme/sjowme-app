@@ -41,8 +41,8 @@
         events: {
             'module.response.twitter.getTweets': function (res) {
                 this.tweets = res.tweets;
+				console.log(res);
             }
-			console.log(res);
         },
 
         methods: {

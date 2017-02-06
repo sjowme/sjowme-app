@@ -260,6 +260,8 @@
                                             <li v-for="mod in modules"
                                                 :class="{'uk-active': current_module.name == mod.name}">
                                                 <a @click="setModule(mod)">{{mod.label}}</a>
+												<info-icon
+													:title="$trans('U kunt maar 1x deze module gebruiken per sjow.')"></info-icon>
                                             </li>
                                         </ul>
 

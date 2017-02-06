@@ -484,7 +484,7 @@
 						message = this.$trans('Positie is al in gebruik door module %label%.', {label: this.current_positions[pos].label})
 					}
 					else {
-						message = this.$trans('Positie is al in gebruik door module %name%.', {label: this.current_positions[pos].label})
+						message = this.$trans('Positie is al in gebruik door module %name%.', {name: this.current_positions[pos].name})
 					}
                 }
                 if (pos == this.slide.config.title.position && this.slide.config.title.active && module_name !== 'title') {

@@ -6,9 +6,9 @@ var client = new Twitter(config.twitter);
 
 
 module.exports = {
-    getTweetsTest(search_term, count) {
+    getTweets(search_term, count) {
 		
-		client.stream('statuses/filter', {track: 'internet'},  function(stream) {
+		client.stream('statuses/filter', {track: search_term},  function(stream) {
 			stream.on('connected', function (res) {
 				console.log('stream connected (' + res.statusCode + ')');
 			});
@@ -37,6 +37,7 @@ module.exports = {
                 count: count
             }, function(err, res) {
                 if (err) {
+				console.log('Reject: '+err+' ');
                     return reject(err);
                 }
 				console.log('Got the tweets: '+res+' ');

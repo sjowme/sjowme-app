@@ -75,10 +75,10 @@ module.exports = {
     },
     panel_style: {
         'Geen kader': '', /*trans*/
-        'Paneel': 'uk-panel-box', /*trans*/
-        'Paneel primaire kleur': 'uk-panel-box uk-panel-box-primary', /*trans*/
-        'Paneel secondaire kleur': 'uk-panel-box uk-panel-box-secondary', /*trans*/
-        'Paneel met kader': 'uk-panel-border' /*trans*/
+        'Lichtgrijs': 'uk-panel-box', /*trans*/
+        'Grijs': 'uk-panel-box uk-panel-box-primary', /*trans*/
+        'Zwart': 'uk-panel-box uk-panel-box-secondary', /*trans*/
+        'Lichtgrijs met kader': 'uk-panel-border' /*trans*/
     }
 
 };

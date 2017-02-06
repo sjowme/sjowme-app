@@ -79,7 +79,7 @@
                         <input type="text" v-model="new_screen_id" class="uk-form-large uk-flex-item-1 uk-margin-right uk-text-center"
                                placeholder="Voer het ID nummer van het scherm in" @keyup.enter="addScreen"/>
                         <button @click="addScreen" class="uk-button uk-button-large uk-button-primary uk-text-nowrap">
-                            {{ 'Gebruik schermmm' | trans }}</button>
+                            {{ 'Gebruik scherm' | trans }}</button>
                     </div>
                 </div>
 

@@ -14,6 +14,7 @@
 
         data() {
             return {
+                interval: 0,
                 tweets: []
             };
         },
@@ -42,7 +43,6 @@
         watch: {
             'config.search_term + config.count': function() {
                 this.getTweets();
-				console.log('Watch Tweets');
             }
         },
 

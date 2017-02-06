@@ -62,7 +62,6 @@
         watch: {
             'config.location.gid + config.forecast.units': function() {
                 this.getWeather();
-				console.log('Watch Weather');
             }
         },
 

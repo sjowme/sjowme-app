@@ -2,7 +2,7 @@
 
 <div class="uk-form-row">
     <div class="uk-form-controls">
-        <label><input type="checkbox" v-model="active" class="uk-margin-small-right"/>Toon titel</label>
+        <label><input type="checkbox" v-model="slide.config.title.active" class="uk-margin-small-right"/>Toon titel</label>
     </div>
 </div>
 
@@ -17,28 +17,28 @@
     <div class="uk-form-controls sj-pick-position">
         <div class="uk-position-relative uk-flex uk-flex-center uk-flex-middle">
             <button class="uk-button uk-button-small uk-position-top-left"
-                    :title="positionError('tl', 'title')" data-uk-tooltip="delay:400" :disabled="!active"
+                    :title="positionError('tl', 'title')" data-uk-tooltip="delay:400" :disabled="!slide.config.title.active"
                     :class="{'uk-button-danger': positionError('tl', 'title'), 'uk-button-success': slide.config.title.position == 'tl'}"
                     @click="setTitlePosition('tl')"><i :class="[(slide.config.title.position == 'tl' ? 'uk-icon-toggle-on': 'uk-icon-toggle-off')]"></i></button>
 
             <button class="uk-button uk-button-small uk-position-top-right"
-                    :title="positionError('tr', 'title')" data-uk-tooltip="delay:400" :disabled="!active"
+                    :title="positionError('tr', 'title')" data-uk-tooltip="delay:400" :disabled="!slide.config.title.active"
                     :class="{'uk-button-danger': positionError('tr', 'title'), 'uk-button-success': slide.config.title.position == 'tr'}"
                     @click="setTitlePosition('tr')"><i :class="[(slide.config.title.position == 'tr' ? 'uk-icon-toggle-on': 'uk-icon-toggle-off')]"></i></button>
 
             <button class="uk-button uk-button-small"
-                    :title="positionError('c', 'title')" data-uk-tooltip="delay:400" :disabled="!active"
+                    :title="positionError('c', 'title')" data-uk-tooltip="delay:400" :disabled="!slide.config.title.active"
                     :class="{'uk-button-danger': positionError('c', 'title'), 'uk-button-success': slide.config.title.position == 'c'}"
                     @click="setTitlePosition('c')"><i :class="[(slide.config.title.position == 'c' ? 'uk-icon-toggle-on': 'uk-icon-toggle-off')]"></i></button>
 
             <button class="uk-button uk-button-small uk-position-bottom-left"
-                    :title="positionError('bl', 'title')" data-uk-tooltip="delay:400" :disabled="!active"
+                    :title="positionError('bl', 'title')" data-uk-tooltip="delay:400" :disabled="!slide.config.title.active"
                     :class="{'uk-button-danger': positionError('bl', 'title'), 'uk-button-success': slide.config.title.position == 'bl'}"
                     @click="setTitlePosition('bl')"><i :class="[(slide.config.title.position == 'bl' ? 'uk-icon-toggle-on': 'uk-icon-toggle-off')]"></i>
             </button>
 
             <button class="uk-button uk-button-small uk-position-bottom-right"
-                    :title="positionError('br', 'title')" data-uk-tooltip="delay:400" :disabled="!active"
+                    :title="positionError('br', 'title')" data-uk-tooltip="delay:400" :disabled="!slide.config.title.active"
                     :class="{'uk-button-danger': positionError('br', 'title'), 'uk-button-success': slide.config.title.position == 'br'}"
                     @click="setTitlePosition('br')"><i :class="[(slide.config.title.position == 'br' ? 'uk-icon-toggle-on': 'uk-icon-toggle-off')]"></i>
             </button>

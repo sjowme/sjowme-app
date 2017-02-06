@@ -50,7 +50,9 @@
         },
 
         watch: {
-            this.getFeeds();
+			'config.count': function() {
+                this.getFeeds();
+            }
         },
 
         methods: {

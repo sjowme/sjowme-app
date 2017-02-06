@@ -4,7 +4,7 @@ var select_options = require('../../lib/options');
 
 module.exports = {
 
-    name: 'weer',
+    name: 'weather',
 
     label: 'Weer widget',
 

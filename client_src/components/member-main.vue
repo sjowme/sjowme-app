@@ -12,7 +12,7 @@
                                 <div class="uk-margin-top uk-flex uk-flex-middle uk-flex-space-between">
                                     <h2 class="uk-margin-remove">{{ 'Mijn Sjows' | trans }}</h2>
                                     <info-icon url="//www.sjow.me/dashboard-mijn-sjows/"
-                                            :title="$trans('Meer informatie over Mijn Sjows')"></info-icon>
+                                            :title="$trans('Meer informatie')"></info-icon>
                                 </div>
                                 <p>
                                     <em>{{ 'Maak een Sjow op basis van één van de templates.' | trans }}</em>
@@ -65,7 +65,7 @@
                                 <div class="uk-margin-top uk-flex uk-flex-middle uk-flex-space-between">
                                     <h2 class="uk-margin-remove">{{ 'Mijn Presentatieschermen' | trans }}</h2>
                                     <info-icon url="//www.sjow.me/dashboard-presentatieschermen/"
-                                               :title="$trans('Meer informatie over Mijn Presentatieschermen')"></info-icon>
+                                               :title="$trans('Meer informatie')"></info-icon>
                                 </div>
                                 <p>
                                     <em>

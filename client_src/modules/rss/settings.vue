@@ -3,7 +3,7 @@
         <div class="uk-margin uk-flex uk-flex-middle uk-flex-space-between">
             <h3 class="uk-margin-remove uk-flex-item-1">{{ 'Instellingen' | trans }} {{ module.label }}</h3>
             <info-icon url="//www.sjow.me/module-nieuws/"
-                       :title="$trans('Meer informatie over deze module')"></info-icon>
+                       :title="$trans('Meer informatie')"></info-icon>
         </div>
 
         <div :id="settings_id" class="uk-grid uk-grid-width-medium-1-2" data-uk-grid-margin>

@@ -183,7 +183,7 @@
                                             <div>
                                                 <label><input type="radio" class="uk-margin-small-right"
                                                               v-model="slide.background.bg_type"
-                                                              value="media"/>{{ 'Afbeelding' | trans }}</label>
+                                                              value="media"/>{{ 'Afbeelding/Video' | trans }}</label>
                                             </div>
                                             <div>
                                                 <label><input type="radio" class="uk-margin-small-right"
@@ -462,7 +462,7 @@
             getBgTypeLabel(type) {
                 return {
                     color: this.$trans('Achtergrondkleur'),
-                    image: this.$trans('Afbeelding'),
+                    image: this.$trans('Afbeelding/Video'),
                     video: this.$trans('Video')
                 }[type] || type;
             },

@@ -38,8 +38,10 @@
         },
 
         watch: {
-            this.getTweets();
-        },
+            'config.search_term + config.count': function() {
+                this.getTweets();
+            }
+        }
 
         methods: {
             getTweets() {

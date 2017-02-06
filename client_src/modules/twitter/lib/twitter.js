@@ -5,14 +5,14 @@ var Twitter = require('twitter');
 var client = new Twitter(config.twitter);
 
 
-client.stream('search/tweets', {q: search_term,result_type: "recent",count: count},  function(stream) {
-	stream.on('data', function(tweet) {
-		console.log(tweet.text);
-	});
+client.stream('statuses/filter', {track: 'twitter'},  function(stream) {
+  stream.on('data', function(tweet) {
+    console.log(tweet.text);
+  });
 
-	stream.on('error', function(error) {
-		console.log(error);
-	});
+  stream.on('error', function(error) {
+    console.log(error);
+  });
 });
 
 module.exports = {

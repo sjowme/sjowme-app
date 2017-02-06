@@ -14,20 +14,8 @@
 
         data() {
             return {
-                interval: 0,
                 tweets: []
             };
-        },
-
-        ready() {
-			if(this.config.search_term) {
-				this.interval = setInterval(this.getTweets, (15 * 60 * 1000));
-				this.getTweets();
-			}
-        },
-
-        destroyed() {
-            clearInterval(this.interval);
         },
 
         created() {

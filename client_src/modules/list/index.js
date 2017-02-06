@@ -2,7 +2,7 @@ var select_options = require('../../lib/options');
 
 module.exports = {
 
-    name: 'list',
+    name: 'lijst',
 
     label: 'Lijst met teksten',
 

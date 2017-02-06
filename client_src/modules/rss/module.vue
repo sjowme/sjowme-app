@@ -14,12 +14,29 @@
 
         data() {
             return {
+                interval: 0,
                 articles: []
             };
         },
 
-        created() {
-            this.getFeeds()
+        ready() {
+            if (this.config.count) {
+                this.interval = setInterval(this.getFeeds, (15 * 60 * 1000));
+                this.getFeeds();
+            }
+        },
+
+        destroyed() {
+            clearInterval(this.interval);
+        },
+
+        computed: {
+            gridClass() {
+                if (this.config.count < 11) {
+                    return `uk-grid-width-1-${this.config.count}`;
+                }
+                return `uk-grid-width-1-10`;
+            }
         },
 
         events: {
@@ -32,18 +49,13 @@
             }
         },
 
+        watch: {
+            this.getFeeds();
+        },
+
         methods: {
             getFeeds() {
                 this.$parent.moduleCommand('rss', 'getFeeds', {count: this.config.count, max_length: this.config.max_length});
-            }
-        },
-
-        computed: {
-            gridClass() {
-                if (this.config.count < 11) {
-                    return `uk-grid-width-1-${this.config.count}`;
-                }
-                return `uk-grid-width-1-10`;
             }
         },
 

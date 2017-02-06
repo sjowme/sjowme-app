@@ -375,7 +375,7 @@
                 var positions = {tl: '', tr: '', c: '', bl: '', br: ''};
                 this.slide.modules.forEach(module => {
                     if (module.config.position) {
-                        positions[module.config.position] = module;
+                        positions[module.config.position] = {name: module.name, label: module.label};
                     }
                 });
                 //title gets prio

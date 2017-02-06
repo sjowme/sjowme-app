@@ -113,7 +113,8 @@
                 return classes;
             },
             moduleCommand(module, command, data) {
-                console.log(`module.command: send ${command} for ${(module)}`);
+				var dt = Date();
+                console.log(`module.command: send ${command} for ${(module)} at(screen-slide.vue) ` + dt);
                 var moduleObj = _.find(this.slide.modules, {name: module}) ||  _.find(this.modules, {name: module});
                 this.$root.socket.emit('module.command', module, command, moduleObj.config, data);
             },

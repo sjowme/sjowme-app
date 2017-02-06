@@ -45,7 +45,8 @@
                 }
             },
             moduleCommand(module, command, data) {
-                console.log(`module.command: send ${command} for ${(module)}`);
+				var dt = Date();
+                console.log(`module.command: send ${command} for ${(module)} at(slide-modules.vue) ` + dt);
                 var moduleObj = _.find(this.model, {name: module}) ||  _.find(this.modules, {name: module});
                 this.$root.socket.emit('module.command', module, command, moduleObj.config, data);
             }

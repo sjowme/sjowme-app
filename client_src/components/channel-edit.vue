@@ -243,7 +243,8 @@
                 return this.edit_modal;
             },
             moduleCommand(module, command, data) {
-                console.log(`module.command: send ${command} for ${(module)}`);
+				var dt = Date();
+                console.log(`module.command: send ${command} for ${(module)} at(channel-edit.vue) ` + dt);
                 var moduleObj = _.find(this.viewdata.modules, {name: module});
                 this.$root.socket.emit('module.command', module, command, moduleObj.config, data);
             }

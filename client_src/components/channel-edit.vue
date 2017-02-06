@@ -15,7 +15,7 @@
                 </div>
         </div>
 
-        <ul class="uk-grid uk-grid-small uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-6 uk-text-center" data-uk-grid-margin="">
+        <ul class="uk-grid uk-grid-small uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5 uk-text-center" data-uk-grid-margin="">
             <li v-for="slide in viewdata.channel.content.slides">
                 <div class="uk-overlay uk-overlay-hover">
                     <img :src="previewImageSrc(viewdata.channel, slide)" :alt="slide.background.name">

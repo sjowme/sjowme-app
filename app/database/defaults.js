@@ -17,13 +17,13 @@ var slide = {
     config: {
         style: 'default',
         size: 'large',
-        title: {
+        /*title: {
             active: true,
             position: 'c',
             size: 'uk-h1',
             color: '',
             uppercase: false,
-        },
+        },*/
         player: {
             duration: 0,
             animation: ''

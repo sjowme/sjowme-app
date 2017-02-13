@@ -375,7 +375,7 @@
                 var positions = {tl: '', tr: '', c: '', bl: '', br: ''};
                 this.slide.modules.forEach(module => {
                     if (module.config.position) {
-                        positions[module.config.position] = module;
+                        positions[module.config.position] = {name: module.name, label: module.label};
                     }
                 });
                 //title gets prio
@@ -414,7 +414,7 @@
             },
             setModule(module) {
                 var active = _.find(this.slide.modules, {name: module.name});
-                this.current_module = active || {name: module.name, config: _.defaultsDeep({}, module.config)};
+                this.current_module = active || {name: module.name, label: module.label, config: _.defaultsDeep({}, module.config)};
             },
             pickMedia(media) {
                 this.slide.background.src = media.image_url;
@@ -479,7 +479,13 @@
             positionError(pos, module_name) {
                 var message = '';
                 if (this.current_positions[pos] && this.current_positions[pos].name !== module_name) {
-                    message = this.$trans('Positie is al in gebruik door module %label%.', {label: this.current_positions[pos].label})
+					if(typeof this.current_positions[pos].label !== "undefined")
+					{
+						message = this.$trans('Positie is al in gebruik door module %label%.', {label: this.current_positions[pos].label})
+					}
+					else {
+						message = this.$trans('Positie is al in gebruik door module %name%.', {name: this.current_positions[pos].name})
+					}
                 }
                 if (pos == this.slide.config.title.position && this.slide.config.title.active && module_name !== 'title') {
                     message = this.$trans('Positie is al in gebruik door de titel.');

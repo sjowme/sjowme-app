@@ -18,8 +18,8 @@ var slide = {
         style: 'default',
         size: 'large',
         title: {
-            active: true,
-            position: 'c',
+            active: false,
+            position: '',
             size: 'uk-h1',
             color: '',
             uppercase: false,
@@ -54,7 +54,11 @@ module.exports = {
                 _.defaults({number: 3, title: 'Slide 3'}, slide),
                 _.defaults({number: 4, title: 'Slide 4'}, slide),
                 _.defaults({number: 5, title: 'Slide 5'}, slide),
-                _.defaults({number: 6, title: 'Slide 6'}, slide)
+                _.defaults({number: 6, title: 'Slide 6'}, slide),
+                _.defaults({number: 7, title: 'Slide 7'}, slide),
+                _.defaults({number: 8, title: 'Slide 8'}, slide),
+                _.defaults({number: 9, title: 'Slide 9'}, slide),
+                _.defaults({number: 10, title: 'Slide 10'}, slide)
             ]
         },
         config: {
@@ -74,7 +78,11 @@ module.exports = {
             slide3: _.defaults({name: 'slide3'}, preview),
             slide4: _.defaults({name: 'slide4'}, preview),
             slide5: _.defaults({name: 'slide5'}, preview),
-            slide6: _.defaults({name: 'slide6'}, preview)
+            slide6: _.defaults({name: 'slide6'}, preview),
+            slide7: _.defaults({name: 'slide7'}, preview),
+            slide8: _.defaults({name: 'slide8'}, preview),
+            slide9: _.defaults({name: 'slide9'}, preview),
+            slide10: _.defaults({name: 'slide10'}, preview)
         }
     },
 

@@ -30,7 +30,7 @@
 
                 <ul class="uk-list uk-list-line">
                     <li v-for="channel in viewdata.channels">
-                        <div class="uk-grid uk-grid-small uk-grid-width-1-6">
+                        <div class="uk-grid uk-grid-small uk-grid-width-1-5">
                             <div v-for="slide in channel.content.slides">
                                 <img :src="previewImageSrc(channel, slide)" :alt="slide.background.name">
                             </div>
@@ -151,7 +151,7 @@
                                         <li v-for="template in items">
                                             <div class="uk-panel uk-panel-hover" @click="pickTemplate(template)">
 
-                                                <div class="uk-grid uk-grid-small uk-grid-width-1-6">
+                                                <div class="uk-grid uk-grid-small uk-grid-width-1-5">
                                                     <div v-for="preview in template.previews">
                                                         <img :src="preview.image_url + '?' + preview.ETag" alt="Sjowme slide" width="240" height="135"/>
                                                     </div>

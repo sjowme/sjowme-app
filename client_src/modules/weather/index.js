@@ -85,13 +85,13 @@ module.exports = {
                     weather: {}
                 });
             }
-            forecast.getWeather(config.forecast.units, config.location.lat, config.location.lng, (params.ignore_cache || false),
+            forecast.getWeather(config.forecast.units, config.location.lat, config.location.lng, (params.ignore_cache || false), params.id,
                 (err, weather) => {
                     if (err) {
                         //todo retry/return cache
                         return cb(err);
                     }
-                    cb(null, {error: false, weather});
+                    cb(null, {error: false, weather, params});
                 });
         }
     }

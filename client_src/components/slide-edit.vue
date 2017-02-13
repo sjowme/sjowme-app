@@ -14,7 +14,7 @@
                             </div>
 
                             <ul class="uk-thumbnav">
-                                <li v-for="sl in channel.content.slides" class="uk-width-1-3"
+                                <li v-for="sl in channel.content.slides" class="uk-width-1-5"
                                     :class="{'uk-active': sl.number == slide.number}">
                                     <a @click="editSlide(sl)" class="uk-position-relative">
                                         <img :src="previewImageSrc(channel, sl)" :alt="sl.background.name" width="240" height="135"/>
@@ -260,6 +260,10 @@
                                             <li v-for="mod in modules"
                                                 :class="{'uk-active': current_module.name == mod.name}">
                                                 <a @click="setModule(mod)">{{mod.label}}</a>
+												<div :class="{'uk-active': mod.name == 'twitter' || mod.name == 'weather' || mod.name == 'rss'}">
+													<exclamation-icon size="uk-icon-small"
+														:title="$trans('Let op: U kunt deze module maar 1x gebruiken per sjow!')"></exclamation-icon>
+												</div>
                                             </li>
                                         </ul>
 
@@ -376,7 +380,7 @@
                 });
                 //title gets prio
                 if (this.slide.config.title.active) {
-                    //positions[this.slide.config.title.position] = {name: 'title', label: 'Titel'};
+                    positions[this.slide.config.title.position] = {name: 'title', label: 'Titel'};
                 }
                 return positions;
             },
@@ -395,11 +399,11 @@
                 });
             },
             editPrev() {
-                var slide = _.find(this.channel.content.slides, {number: (this.slide.number == 1 ? 6 : (this.slide.number - 1))});
+                var slide = _.find(this.channel.content.slides, {number: (this.slide.number == 1 ? 10 : (this.slide.number - 1))});
                 this.editSlide(slide);
             },
             editNext() {
-                var slide = _.find(this.channel.content.slides, {number: (this.slide.number == 6 ? 1 : (this.slide.number + 1))});
+                var slide = _.find(this.channel.content.slides, {number: (this.slide.number == 10 ? 1 : (this.slide.number + 1))});
                 this.editSlide(slide);
             },
             editSlide(slide) {
@@ -475,7 +479,7 @@
             positionError(pos, module_name) {
                 var message = '';
                 if (this.current_positions[pos] && this.current_positions[pos].name !== module_name) {
-                    message = this.$trans('Positie is al in gebruik door module %name%.', {name: this.current_positions[pos].name})
+                    message = this.$trans('Positie is al in gebruik door module %label%.', {label: this.current_positions[pos].label})
                 }
                 if (pos == this.slide.config.title.position && this.slide.config.title.active && module_name !== 'title') {
                     message = this.$trans('Positie is al in gebruik door de titel.');

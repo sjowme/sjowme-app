@@ -195,7 +195,7 @@
 
                                     <div class="uk-panel">
                                         <ul class="uk-nav uk-nav-side">
-                                            <li v-if="$root.$options.name != 'admin'" class="uk-nav-header">
+                                            <li class="uk-nav-header">
                                                 <div class="uk-flex uk-flex-space-between uk-flex-middle">
                                                     <span class="uk-flex-item-1">{{ 'Upload eigen bestanden' | trans }}</span>
                                                     <button type="button"

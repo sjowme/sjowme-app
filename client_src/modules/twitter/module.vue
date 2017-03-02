@@ -15,7 +15,8 @@
         data() {
             return {
                 interval: 0,
-                tweets: []
+                tweets: [],
+				id: _.uniqueId('twitter'),
             };
         },
 

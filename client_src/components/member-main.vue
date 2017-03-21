@@ -69,7 +69,8 @@
                                 </div>
                                 <p>
                                     <em>
-                                        {{ 'Ga naar ' | trans }}<a :href="viewdata.screen_url" target="_blank">{{ viewdata.screen_url }}</a>{{ ' op het weergave scherm.' | trans }}
+                                        {{ 'Ga naar het weergavescherm, open daar' | trans }} <a href="//www.sjow.me" target="_blank">{{ 'www.sjow.me' }}</a> {{ 'en klik op presentatiescherm.' | trans }}<br />
+										{{ 'U ziet daar een nummer. Voer dit nummer hieronder in.' | trans }}
                                     </em>
                                 </p>
                             </div>

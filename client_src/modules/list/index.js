@@ -4,7 +4,7 @@ module.exports = {
 
     name: 'list',
 
-    label: 'Lijst met teksten',
+    label: 'Teksten',
 
     image_url: 'assets/content/modules/list.png',
 

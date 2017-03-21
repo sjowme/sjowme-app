@@ -53,7 +53,7 @@
 
             </div>
             <div>
-                <p><em>{{ 'Klik op "geavanceerd" om de teksten in te voeren.' | trans }}</em></p>
+                <p><em>{{ 'Klik op "meer opties" om de teksten in te voeren.' | trans }}</em></p>
                 <fields :model.sync="config" :config="module.fields.config" template="formrow"></fields>
 
             </div>

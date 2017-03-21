@@ -196,7 +196,7 @@
                                     <div class="uk-panel">
                                         <ul class="uk-nav uk-nav-side">
                                             <li class="uk-nav-header">
-                                                <div class="uk-flex uk-flex-space-between uk-flex-middle">
+                                                <div class="uk-flex uk-flex-space-between uk-flex-middle show">
                                                     <span class="uk-flex-item-1">{{ 'Upload eigen bestanden' | trans }}</span>
                                                     <button type="button"
                                                             class="uk-button uk-button-small uk-button-primary"

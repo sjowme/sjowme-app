@@ -55,6 +55,13 @@
 
                     </div>
                 </div>
+                <div class="sj-preview-info">
+                    <div class="uk-panel uk-panel-space uk-form">
+                        <div class="uk-margin-topuk-panel uk-panel-box uk-flex uk-flex-wrap uk-flex-space-around" data-uk-margin="">
+                            {{ 'Kijk op uw presentatiescherm voor de verhouding en de grootte van de beeldelementen.' | trans }}
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>

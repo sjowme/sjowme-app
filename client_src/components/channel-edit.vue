@@ -37,6 +37,11 @@
             <div class="uk-grid uk-grid-width-medium-1-2" data-uk-grid-margin>
                 <div class="uk-form-horizontal">
                     <div class="uk-margin-top uk-flex uk-flex-middle uk-flex-space-between">
+                        <em>
+							{{ 'klik op een dia om deze aan te passen' |trans }}
+						</em>
+                    </div>
+					<div class="uk-margin-top uk-flex uk-flex-middle uk-flex-space-between">
                         <h3 class="uk-margin-remove">{{ 'Algemene instellingen' | trans }}</h3>
                         <info-icon url="//www.sjow.me/standaardscherm-instellingen/"
                                    :title="$trans('Meer informatie')"></info-icon>
@@ -87,7 +92,7 @@
                     </div>
 
                     <div class="uk-margin-top uk-flex uk-flex-middle uk-flex-space-between">
-                        <h3 class="uk-margin-remove">{{ 'Modules' | trans }}</h3>
+                        <h3 class="uk-margin-remove">{{ 'Aanpassen volgnummer (indien actief)' | trans }}</h3>
                         <info-icon url="//www.sjow.me/standaardscherm-module/"
                                    :title="$trans('Meer informatie')"></info-icon>
                     </div>

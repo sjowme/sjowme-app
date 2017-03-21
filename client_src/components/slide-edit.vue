@@ -41,26 +41,28 @@
                         </div>
                     </div>
                 </div>
-                <div class="sj-preview-tools">
-                    <div class="uk-panel uk-panel-space uk-form">
-                        <div class="uk-margin-topuk-panel uk-panel-box uk-flex uk-flex-wrap uk-flex-space-around" data-uk-margin="">
-                            <button type="button" class="uk-button uk-modal-close">
-                                {{ 'Sluiten' | trans }}
-                            </button>
-                            <button type="button" @click="saveSlide()" class="uk-button uk-button-primary">
-                                {{ 'Opslaan' | trans }}
-                            </button>
-                        </div>
+				<div class="sj-preview-right-wrapper">
+					<div class="sj-preview-tools">
+						<div class="uk-panel uk-panel-space uk-form">
+							<div class="uk-margin-topuk-panel uk-panel-box uk-flex uk-flex-wrap uk-flex-space-around" data-uk-margin="">
+								<button type="button" class="uk-button uk-modal-close">
+									{{ 'Sluiten' | trans }}
+								</button>
+								<button type="button" @click="saveSlide()" class="uk-button uk-button-primary">
+									{{ 'Opslaan' | trans }}
+								</button>
+							</div>
 
 
-                    </div>
-                </div>
-                <div class="sj-preview-info">
-                    <div class="uk-panel uk-panel-space uk-form">
-                        <div class="uk-margin-topuk-panel uk-panel-box uk-flex uk-flex-wrap uk-flex-space-around" data-uk-margin="">
-                            {{ 'Kijk op uw presentatiescherm voor de verhouding en de grootte van de beeldelementen.' | trans }}
-                        </div>
-                    </div>
+						</div>
+					</div>
+					<div class="sj-preview-info">
+						<div class="uk-panel uk-panel-space uk-form">
+							<div class="uk-margin-topuk-panel uk-panel-box uk-flex uk-flex-wrap uk-flex-space-around" data-uk-margin="">
+								{{ 'Kijk op uw presentatiescherm voor de verhouding en de grootte van de beeldelementen.' | trans }}
+							</div>
+						</div>
+					</div>
                 </div>
             </div>
 

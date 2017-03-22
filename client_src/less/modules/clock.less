@@ -10,6 +10,13 @@
 @clock-digital-digit-color-dark: @global-contrast-color;
 @clock-digital-digit-background-dark: @global-secondary-background;
 
+@clock-digital-size: 25vh;
+@clock-digital-size-small: @clock-digital-size * @screen-slide-small-factor;
+@clock-digital-size-medium: @clock-digital-size * @screen-slide-medium-factor;
+@clock-digital-size-large: @clock-digital-size * @screen-slide-large-factor;
+@clock-digital-size-xlarge: @clock-digital-size * @screen-slide-xlarge-factor;
+@clock-digital-size-xxlarge: @clock-digital-size * @screen-slide-xxlarge-factor;
+
 .sj-module-clock.sj-pos-tr .uk-panel, .sj-module-clock.sj-pos-br .uk-panel {
   text-align: right;
 }
@@ -25,6 +32,43 @@
   height: (@clock-digital-digit-height + @clock-digital-digit-margin);
 }
 
+/*-------------------------
+	Size theme
+--------------------------*/
+.sj-sj-clock-small {
+  .clock {
+    width: @clock-digital-size-small;
+    height: @clock-digital-size-small;
+  }
+}
+
+.sj-slide-medium {
+  .sj-clock {
+    width: @clock-digital-size-medium;
+    height: @clock-digital-size-medium;
+  }
+}
+
+.sj-slide-large {
+  .sj-clock {
+    width: @clock-digital-size-large;
+    height: @clock-digital-size-large;
+  }
+}
+
+.sj-slide-xlarge {
+  .sj-clock {
+    width: @clock-digital-size-xlarge;
+    height: @clock-digital-size-xlarge;
+  }
+}
+
+.sj-slide-xxlarge {
+  .sj-clock {
+    width: @clock-digital-size-xxlarge;
+    height: @clock-digital-size-xxlarge;
+  }
+}
 
 /*-------------------------
 	Light color theme

@@ -108,7 +108,8 @@
                 if (this.filter.tags.indexOf(tag) > -1) {
                     return this.filter.tags.$remove(tag);
                 }
-                this.filter.tags.push(tag);
+				this.filter.tags = [tag];
+                //this.filter.tags.push(tag);
             },
             pick(media) {
                 this.onPick(media)

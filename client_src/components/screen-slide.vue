@@ -130,7 +130,7 @@
         },
 
         components: {
-            'module-logo': require('../modules/logo/module.vue'),
+         
             'module-list': require('../modules/list/module.vue'),
             'module-weather': require('../modules/weather/module.vue'),
             'module-iframe': require('../modules/iframe/module.vue'),

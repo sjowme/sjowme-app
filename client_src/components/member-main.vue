@@ -11,17 +11,18 @@
                             <div class="uk-width-3-4">
                                 <div class="uk-margin-top uk-flex uk-flex-middle uk-flex-space-between">
                                     <h2 class="uk-margin-remove">{{ 'Mijn Sjows' | trans }}</h2>
-                                    <info-icon url="//www.sjow.me/dashboard-mijn-sjows/"
-                                            :title="$trans('Meer informatie')"></info-icon>
+                                 
                                 </div>
                                 <p>
-                                    <em>{{ 'Maak een Sjow op basis van één van de templates.' | trans }}</em>
+                                    <em>{{ 'U maakt eenvoudig een Sjow aan door op <br> Maak Sjow te klikken en een sjabloon te kiezen.<br> Pas deze Sjow vervolgens aan door op het potloodje rechts onder de preview te klikken.' | trans }}</em>
                                 </p>
                             </div>
                         </div>
                     </div>
 
                     <p class="uk-text-right">
+						 <info-icon url="//www.sjow.me/dashboard-mijn-sjows/"
+                                            :title="$trans('Meer informatie')"></info-icon>
                         <button @click="selectTemplate" class="uk-button uk-button-primary uk-button-large uk-text-nowrap">
                             {{ 'Maak Sjow' | trans }}</button>
                     </p>
@@ -42,10 +43,10 @@
                             </div>
                             <div class="uk-width-1-3 uk-text-right">
                                 <div class="uk-button-group">
-                                    <button @click="editChannel(channel)" class="uk-button uk-button-small"
+                                    <button @click="editChannel(channel)" class="uk-button uk-button-default"
                                             :title="$trans('Bewerk')" data-uk-tooltip="delay:300">
                                         <i class="uk-icon-edit"></i></button>
-                                    <button @click="deleteChannel(channel)" class="uk-button uk-button-small"
+                                    <button @click="deleteChannel(channel)" class="uk-button uk-button-default"
                                             :title="$trans('Vergeet')" data-uk-tooltip="delay:300">
                                         <i class="uk-icon-trash-o"></i></button>
                                 </div>
@@ -69,8 +70,7 @@
                                 </div>
                                 <p>
                                     <em>
-                                        {{ 'Ga naar het weergavescherm, open daar' | trans }} <a href="//www.sjow.me" target="_blank">{{ 'www.sjow.me' }}</a> {{ 'en klik op presentatiescherm.' | trans }}<br />
-										{{ 'U ziet daar een nummer. Voer dit nummer hieronder in.' | trans }}
+                                        {{ 'Ga naar ' | trans }}<a :href="viewdata.screen_url" target="_blank">{{ viewdata.screen_url }}</a>{{ ' op het weergave scherm.' | trans }}
                                     </em>
                                 </p>
                             </div>

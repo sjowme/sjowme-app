@@ -20,7 +20,7 @@
             return {
                 interval: 0,
                 weather: false,
-				id: _.uniqueId('weather'),
+				id: _.uniqueId()
             };
         },
 

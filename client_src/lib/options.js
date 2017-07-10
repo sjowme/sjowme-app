@@ -42,12 +42,12 @@ module.exports = {
         }
     },
     heading_size: {
-        'Titel H1': 'uk-h1', /*trans*/
-        'Titel H2': 'uk-h2', /*trans*/
-        'Titel H3': 'uk-h3', /*trans*/
-        'Titel H4': 'uk-h4', /*trans*/
-        'Grote kop': 'uk-heading-large', /*trans*/
-        'Extra grote kop': 'uk-heading-large uk-text-large' /*trans*/
+        'Zeer klein': 'uk-h1', /*trans*/
+        'Klein': 'uk-h2', /*trans*/
+        'Normaal': 'uk-h3', /*trans*/
+        'Groot': 'uk-h4', /*trans*/
+        'Zeer groot': 'uk-heading-large', /*trans*/
+        'Extra groot': 'uk-heading-large uk-text-large' /*trans*/
     },
     text_size: {
         'Gelijk aan dia': '', /*trans*/

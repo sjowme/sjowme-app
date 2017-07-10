@@ -1,12 +1,11 @@
-
 var forecast = require('./lib/forecast');
 var select_options = require('../../lib/options');
 
 module.exports = {
 
-    name: 'weather',
+    name: 'weer',
 
-    label: 'Weer widget',
+    label: 'Weersverwachting',
 
     image_url: 'assets/content/modules/weather.png',
 

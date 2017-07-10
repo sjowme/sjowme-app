@@ -41,28 +41,19 @@
                         </div>
                     </div>
                 </div>
-				<div class="sj-preview-right-wrapper">
-					<div class="sj-preview-tools">
-						<div class="uk-panel uk-panel-space uk-form">
-							<div class="uk-margin-topuk-panel uk-panel-box uk-flex uk-flex-wrap uk-flex-space-around" data-uk-margin="">
-								<button type="button" class="uk-button uk-modal-close">
-									{{ 'Sluiten' | trans }}
-								</button>
-								<button type="button" @click="saveSlide()" class="uk-button uk-button-primary">
-									{{ 'Opslaan' | trans }}
-								</button>
-							</div>
+                <div class="sj-preview-tools">
+                    <div class="uk-panel uk-panel-space uk-form">
+                        <div class="uk-margin-topuk-panel uk-panel-box uk-flex uk-flex-wrap uk-flex-space-around" data-uk-margin="">
+                            <button type="button" class="uk-button uk-modal-close">
+                                {{ 'Sluiten' | trans }}
+                            </button>
+                            <button type="button" @click="saveSlide()" class="uk-button uk-button-primary">
+                                {{ 'Opslaan' | trans }}
+                            </button>
+                        </div>
 
 
-						</div>
-					</div>
-					<div class="sj-preview-info">
-						<div class="uk-panel uk-panel-space uk-form">
-							<div class="uk-margin-topuk-panel uk-panel-box uk-flex uk-flex-wrap uk-flex-space-around" data-uk-margin="">
-								{{ 'Kijk op uw presentatiescherm voor de verhouding en de grootte van de beeldelementen.' | trans }}
-							</div>
-						</div>
-					</div>
+                    </div>
                 </div>
             </div>
 
@@ -204,8 +195,8 @@
 
                                     <div class="uk-panel">
                                         <ul class="uk-nav uk-nav-side">
-                                            <li class="uk-nav-header">
-                                                <div class="uk-flex uk-flex-space-between uk-flex-middle show">
+                                            <li v-if="$root.$options.name != 'admin'" class="uk-nav-header">
+                                                <div class="uk-flex uk-flex-space-between uk-flex-middle">
                                                     <span class="uk-flex-item-1">{{ 'Upload eigen bestanden' | trans }}</span>
                                                     <button type="button"
                                                             class="uk-button uk-button-small uk-button-primary"
@@ -270,8 +261,8 @@
                                                 :class="{'uk-active': current_module.name == mod.name}">
                                                 <a @click="setModule(mod)">{{mod.label}}</a>
 												<div :class="{'uk-active': mod.name == 'twitter' || mod.name == 'weather' || mod.name == 'rss'}">
-													<info-icon url="//www.sjow.me/extra-info-rss/"
-														:title="$trans('Meer informatie')"></info-icon>
+													<exclamation-icon size="uk-icon-small"
+														:title="$trans('Let op: U kunt deze module maar 1x gebruiken per sjow!')"></exclamation-icon>
 												</div>
                                             </li>
                                         </ul>
